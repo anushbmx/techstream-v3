@@ -1,3 +1,5 @@
+The Backend script that runs http://techstream.org
+
 MVC Framework 
 =============
 
@@ -9,11 +11,6 @@ Completed
 1. URL processing
 2. Model
 3. Controller
-
-To DO
------
-1. Database Connection usind PDO
-2. Additional Requirnments as per required
 
 
 Settings
