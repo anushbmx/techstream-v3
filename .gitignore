@@ -1,0 +1,4 @@
+app/settings-local.php
+/vendor/**/.git
+/vendor
+composer.phar
