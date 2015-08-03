@@ -1,4 +1,4 @@
-app/settings-local.php
+/app/settings-local.php
 /vendor/**/.git
 /vendor
 composer.phar
