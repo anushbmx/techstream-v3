@@ -1,3 +1,7 @@
+.row {
+	max-width: 75.5rem;
+}
+
 /* Genearal Styles */
 a {
 	color: rgb(0, 102, 204,1);
@@ -13,6 +17,9 @@ a:visited {
 	color: rgba(13,89,195,1);
 }
 
+.inline-list li:first-child {
+	margin-left: 0 !important;
+}
 /* Utlity Classes */
 .block {
 	display: block;
@@ -157,7 +164,7 @@ a:visited {
 /* Border */
 
 .border {
-	border-color: rgb(221, 221, 221);
+	border-color: rgb(221, 221, 221) !important;
 }
 	.bt {
 		border-top: 1px solid;
@@ -205,7 +212,7 @@ a:visited {
 	}
 
 	#footer .link-1 {
-		border-color: rgba(255,255,255,1);
+		border-color: rgba(255,255,255,1) !important;
 	}
 
 	#footer .link-1 a {
