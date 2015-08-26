@@ -5,9 +5,8 @@
 */
 class Home extends Controller
 {
-	public function index()
+	public function index( $paramater = null )
 	{
-		$this->model('User');
 		$data['username'] = "Anush";
 		$data['TITLE'] = "it works";
 		$this->view('home/index.html',$data);

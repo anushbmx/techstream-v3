@@ -14,7 +14,7 @@
 			<div class="column medium-8 small-12 border br">
 				<h1>Second Articles</h1>
 			</div>
-			<div class="column medium-4 show-for-medium-up">
+			<div class="column medium-4">
 				<h1>Bits</h1>
 			</div>
 		</div>
@@ -36,7 +36,7 @@
 		</div>
 	</div>
 	<div class="most-read">
-		<div class="row border bt bb">
+		<div class="row border bb">
 			<div class="column small-12 medium-4">
 				<h4>Section 1</h4>
 			</div>
