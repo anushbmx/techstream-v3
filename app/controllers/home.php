@@ -13,8 +13,8 @@ class Home extends Controller
 			$this->view('home/index.html',$data);
 		} else {
 			$data['username'] = "Anush";
-			$data['TITLE'] = "Article";
-			$this->view('home/article.html',$data);
+			$data['TITLE'] = "Bits";
+			$this->view('home/bits.html',$data);
 		}
 		
 	}
