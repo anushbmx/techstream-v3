@@ -42,3 +42,8 @@ $GLOBALS['config'] = array(
 		'token_name'		=> 'domain_token'
 	)
 );
+
+
+/** Table Name Definitions */
+define('USERS_TABLE', 'users');
+define('ARTICLE_TABLE', 'data');

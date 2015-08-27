@@ -20,6 +20,11 @@ a:visited {
 .inline-list li:first-child {
 	margin-left: 0 !important;
 }
+
+.nostyle-list {
+	list-style: none;
+	margin: 0 !important;
+}
 /* Utlity Classes */
 .block {
 	display: block;

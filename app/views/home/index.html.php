@@ -2,7 +2,12 @@
 	<div class="featured-post border bb">
 		<div class="row">
 			<div class="column small-12 small-centered medium-uncentered medium-10">
-				<h1>Main post</h1>
+				<div class="row">
+					<div class="column small-8 medium-7"></div>
+					<div class="column small-4 medium-5">
+						<h1><?=$data['article'][0]['TITLE']?></h1>
+					</div>
+				</div>
 			</div>
 			<div class="column small-12 text-center medium-2">
 				<h1>Ads</h1>
@@ -12,7 +17,41 @@
 	<div class="second-post">
 		<div class="row">
 			<div class="column medium-8 small-12 border br">
-				<h1>Second Articles</h1>
+				<ul class="nostyle-list">
+					<li class="border bb">
+						<div class="row">
+							<div class="column small-3 medium-3 large-2">
+								<img src="<?=MEDIAPATH.$data['article'][1]['IMG110']?>" alt="<?=$data['article'][1]['TITLE']?>" />
+							</div>
+							<div class="column small-8 medium-9 large-10">
+								<h4><?=$data['article'][1]['TITLE']?></h4>
+								<p><?=$data['article'][1]['DES']?></p>
+								<ul class="inline-list">
+									<li><a href="<?=PUBLICPATH . $data['article'][1]['SECURL']?>"><?=$data['article'][1]['SEC']?></a></li>
+									<li><?=date('M dS',strtotime($data['article'][1]['DATE']))?></li>
+									<li>Comments</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li class="border bb">
+						<div class="row">
+							<div class="column small-3 medium-3 large-2">
+								<img src="<?=MEDIAPATH.$data['article'][2]['IMG110']?>" alt="<?=$data['article'][2]['TITLE']?>" />
+							</div>
+							<div class="column small-8 medium-9 large-10">
+								<h4><?=$data['article'][2]['TITLE']?></h4>
+								<p><?=$data['article'][2]['DES']?></p>
+								<ul class="inline-list">
+									<li><a href="<?=PUBLICPATH . $data['article'][2]['SECURL']?>"><?=$data['article'][2]['SEC']?></a></li>
+									<li><?=date('M dS',strtotime($data['article'][2]['DATE']))?></li>
+									<li>Comments</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+				</ul>
+
 			</div>
 			<div class="column medium-4">
 				<h1>Bits</h1>

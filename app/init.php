@@ -32,6 +32,7 @@ require_once APPPATH . 'core/Controller.php';
 
 
 /* Adding functions */
+require_once APPPATH . 'functions/utlities.php';
 
 
 /* Adding Composer Installs */

@@ -2,11 +2,11 @@
 	<div class="article-head">
 		<div class="row">
 			<div class="column small-12 medium-9 large-8 small-centered">
-				<small>Article image</small>
-				<h1>Article Title</h1>
+				<img src="<?=MEDIAPATH . $data['IMG'] ?>" alt="<?=$data['TITLE']?>"/>
+				<h1><?=$data['TITLE']?></h1>
 				<ul class="inline-list border bt">
-					<li>Date</li>
-					<li>Section</li>
+					<li><a href="<?=PUBLICPATH . $data['SECURL']?>"><?=$data['SEC']?></a></li>
+					<li><?=date('M dS Y',strtotime($data['DATE']))?></li>
 					<li>Comments</li>
 				</ul>
 			</div>
@@ -19,10 +19,18 @@
 				<h6>Ads</h6>
 			</div>
 			<div class="column small-12 medium-9 large-8 large-uncentered small-centered">
-				<p>Article is here</p>
+				<section class="article">
+					<?=$data['FULLTEXT']?>
+				</section>
 			</div>
 			<div class="column large-2 hide-for-medium-down">
-				<h6>Social Links</h6>
+				<ul class="side-nav">
+					<li>Share it on :</li>
+					<li class="divider"></li>
+					<li>Facebook</li>
+					<li>Twitter</li>
+					<li>Google Plus</li>
+				</ul>
 			</div>
 		</div>
 	</div>

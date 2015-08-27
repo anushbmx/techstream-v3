@@ -31,11 +31,16 @@ class App
 			{
 				$this->method = $url[1];
 				unset($url[1]);
+			} else {
+				$this->params[] =  implode('/', $url);
 			}
 
 		}
 
-		$this->params = $url ? array_values($url) : [];
+		if( empty($this->params) ){
+			$this->params = $url ? array_values($url) : [];
+		}
+
 
 		call_user_func_array([$this->controller,$this->method], $this->params);
 	}
