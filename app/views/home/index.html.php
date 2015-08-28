@@ -24,14 +24,14 @@
 					?>
 					<li class="border bb">
 						<div class="row">
-							<div class="column small-12 medium-5 large-4">
+							<div class="column small-12 medium-9 medium-centered large-uncentered large-4">
 								<a href="<?=PUBLICPATH.$data['article'][$i]['LINK']?>">
 									<div class="responsive-image">
 										<img src="<?=MEDIAPATH.$data['article'][$i]['IMG']?>" alt="<?=$data['article'][$i]['TITLE']?>" />
 									</div>
 								</a>
 							</div>
-							<div class="column small-12 medium-7 large-8">
+							<div class="column small-12 medium-12 medium-only-text-center large-8">
 								<a href="<?=PUBLICPATH.$data['article'][$i]['LINK']?>"><h4><?=$data['article'][$i]['TITLE']?></h4></a>
 								<p><?=elliStr($data['article'][$i]['DES'],120)?></p>
 								<ul class="inline-list">

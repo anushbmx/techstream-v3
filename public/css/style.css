@@ -187,6 +187,19 @@ a:visited {
 		border-left: 1px solid;
 	}
 
+
+/* Images */
+.responsive-image {
+    height: 0px;
+    overflow: hidden;
+    padding-bottom: 54%;
+}
+
+img {
+	display: block;
+	width: 100%;
+}
+
 /* Template Styles */
 
 #header {
