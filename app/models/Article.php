@@ -13,7 +13,7 @@ class Article
 			$_count = 0, // Counter for query results
 			$_data;		// Will be notification Object to store Aticle data.
 
-	function __construct( $article )
+	function __construct( $article = null )
 	{
 		$this->_db = DB::getInstance();
 
@@ -66,7 +66,7 @@ class Article
 	 * @param string/integer $article Article ID , Article URL
 	 * @param string $field the Identifyer to be looked. eg article_id ( Default ) or url
 	 */
-	public function find ( $article = null, $field = 'SL_NO' ) {
+	public function find ( $article = null, $field = 'SL_NO', $status = 1 ) {
 
 		if ( $article  && $field ) {
 			$data = $this->_db->get( ARTICLE_TABLE, array( $field, '=', $article ) );
@@ -89,13 +89,13 @@ class Article
 	 * @param $field 
 	 *
 	 */
-	public function articleList ( $notification = null, $field = null , $start = null, $end = null) {
+	public function articleList ( $notification = null, $field = null , $start = null, $limit = null, $status = 1) {
 
 		if ( $field ) {
-			if ( $start && $end ) {
-				$data = $this->_db->where( ARTICLE_TABLE, "SELECT *", "$field = $notification ORDER BY DATE DESC");
+			if ( !$start && !$limit ) {
+				$data = $this->_db->where( ARTICLE_TABLE, "SELECT *", "$field = '$notification' AND STATUS = $status ORDER BY DATE DESC");
 			} else {
-				$data = $this->_db->where( ARTICLE_TABLE, "SELECT *", "$field = $notification ORDER BY DATE DESC LIMIT $start, $end");
+				$data = $this->_db->where( ARTICLE_TABLE, "SELECT *", "$field = '$notification' AND STATUS = $status ORDER BY DATE DESC LIMIT $start, $limit");
 			}
 
 			if ( $this->_db->count() ) {
