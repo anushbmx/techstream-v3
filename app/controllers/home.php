@@ -16,7 +16,7 @@ class Home extends Controller
 			$article = new Article();
 
 			$data['bits']  = objectToArray($article->articleList('Bits','SEC',0,10));
-			$data['article']  = objectToArray($article->articleList(0,'TYPE',0,10));
+			$data['article']  = objectToArray($article->articleList(0,'TEMPLATE',0,10));
 			$data['username'] = "Anush";
 			$data['TITLE'] = "it works";
 

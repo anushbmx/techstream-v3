@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="column small-12 medium-9 large-8 small-centered">
 				<img src="<?=MEDIAPATH . $data['IMG'] ?>" alt="<?=$data['TITLE']?>"/>
-				<h1><?=$data['TITLE']?></h1>
+				<h1 class="article-heading"><?=$data['TITLE']?></h1>
 				<ul class="inline-list border bt">
 					<li><a href="<?=PUBLICPATH . $data['SECURL']?>"><?=$data['SEC']?></a></li>
 					<li><?=date('M dS Y',strtotime($data['DATE']))?></li>

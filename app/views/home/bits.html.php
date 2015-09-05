@@ -2,7 +2,7 @@
 	<div class="article-head">
 		<div class="row">
 			<div class="column small-12 medium-8 large-8">
-				<h1><?=$data['TITLE']?></h1>
+				<h1 class="pages-heading "><?=$data['TITLE']?></h1>
 				<p class="border bt"><?=$data['DES']?></p>
 			</div>
 			<div class="column small-6 medium-4 large-4 small-centered medium-uncentered">
