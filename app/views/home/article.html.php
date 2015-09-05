@@ -42,6 +42,7 @@
 			</div>
 			<div class="column small-12 medium-4 large-4">
 				<h5>Sidebar</h5>
+				<?php include 'includes/sidebar.html.php'; ?>
 			</div>
 		</div>
 	</div>

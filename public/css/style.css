@@ -241,3 +241,15 @@ img {
 		display: inline-block;
 		float: none;
 	}
+
+/* Index Page Tempate */
+.featured-post{
+	position: relative;
+}
+	.featured-post-description{
+		margin-top: 0px;
+		position: absolute;
+		right: 0px;
+		top: 50%;
+		transform: translateY(-50%);
+	}

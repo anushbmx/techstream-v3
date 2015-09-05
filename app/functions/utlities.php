@@ -65,8 +65,6 @@ function objectToArray($d)
 }
 
 
-function sanatize($data){
-
 /*
     ---------------------
     | Sanatize Function |
@@ -74,11 +72,10 @@ function sanatize($data){
 
     Sanatizes the data sent as argument
 */
-
+function sanatize($data){
     return mysql_real_escape_string($data);
 }
 
-function sanitize_message($string, $force_lowercase = false, $anal = false) {
 /**
  * Returns a sanitized string, typically for URLs.
  *
@@ -87,6 +84,7 @@ function sanitize_message($string, $force_lowercase = false, $anal = false) {
  *     $force_lowercase - Force the string to lowercase?
  *     $anal - If set to *true*, will remove all non-alphanumeric characters.
  */
+function sanitize_message($string, $force_lowercase = false, $anal = false) {
     $strip = array("~", "`", "!", "#", "$", "%", "^", "&", "*", "(", ")", "_", "=", "+", "[", "{", "]",
                    "}", "\\", "|", ";", ":", "\"", "'", "&#8216;", "&#8217;", "&#8220;", "&#8221;", "&#8211;", "&#8212;",
                    "Ã¢â‚¬â€", "Ã¢â‚¬â€œ", ",", "<", ".", ">", "/", "?");
@@ -98,4 +96,73 @@ function sanitize_message($string, $force_lowercase = false, $anal = false) {
             strtolower($clean) :
         $clean;
 }
+
+
+/**
+*  Pagination
+*
+* Prints the Pagination for selected category for lists
+*
+* Arguments ( $selection , <category> )
+* --------------------------------------
+*
+* $url       -> Url for
+* $limit     -> Number of results to print / display
+* $start     -> Index number to start
+*
+**/
+function pagination( $numposts = 0, $limit, $start = 0, $url = NULL , $pages_to_show = 5) {
+    
+    $current_page = floor($start / $limit) + 1;    
+    if($current_page < 2 ){
+        $current_page = 1;
+    }
+
+
+    $posts_per_page = $limit;
+
+    $max_page = ceil($numposts/$posts_per_page);
+
+    $custom_range = round($pages_to_show/2);
+
+    if($max_page > 1) {
+        echo '<ul class = "pagination right"><li class="unavailable" aria-disabled="true"><a href="">Page '.$current_page.' of '.$max_page.' : </a></li>';
+        if($current_page!= 1){
+            echo '<li><a ';
+            if($current_page!=2){
+                echo 'href="'.$url.'/'.($current_page-1).'"';
+            }else{
+                echo 'href="'.$url.'"';
+            }
+            echo '><i class="fa fa-chevron-left"></i> Previous</a></li>';
+        }else{
+            echo '<li class="arrow unavailable" aria-disabled="true"><a href=""><i class="fa fa-chevron-left"></i> Previous</a></li>';
+        }
+        if ($current_page > ($pages_to_show-1)) {
+            echo '<li><a href="'.$url.'">1</a></li><li class="space">...</li>';
+        }
+        for($i = $current_page - $custom_range; $i <= $current_page + $custom_range; $i++){
+            if ($i >= 1 && $i <= $max_page){
+                if($i == $current_page) {
+                    echo '<li class="current"><a>'.$i.'</a></li>';
+                }else{
+                    echo '<li><a ';
+                    if($i!=1){ echo 'href="'.$url.'/'.$i.'"'; }else {echo 'href="'.$url.'"'; }
+                    echo '>'.$i.'</a></li>';
+                }
+            }
+        }
+        if (($current_page+$custom_range) < ($max_page))
+            echo ' <li class="unavailable"><a href="">&hellip;</a></li><li><a href="'.$url.'/'.$max_page.'">'.$max_page.'</a></li>';
+
+        if($current_page!= $max_page)
+            echo '<li> <a href="'.$url.'/'.($current_page+1).'">Next <i class="fa fa-chevron-right"></i></a></li>';
+        else
+            echo '<li class="arrow unavailable" aria-disabled="true"><a href="">Next <i class="fa fa-chevron-right"></i></a></li>';
+
+        echo '</ul>';
+
+    }
+}
+
 

@@ -38,6 +38,9 @@
 					}
 					?>
 				</ul>
+				<div class="pagination">
+					<?php pagination($data['totalArticle'],$data['limit'] ,$data['start'], $data['sectionUrl']);?>
+				</div>
 			</div>
 			<div class="column small-12 medium-4 large-4">
 				<h5>Sidebar</h5>

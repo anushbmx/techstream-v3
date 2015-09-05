@@ -8,7 +8,7 @@
 					</div>
 				</a>
 			</div>
-			<div class="hide-for-small column small-4 medium-5 text-center">
+			<div class="featured-post-description hide-for-small column small-4 medium-5 text-center">
 				<a href="<?=PUBLICPATH.$data['article'][0]['LINK']?>"><h3 class=""><?=$data['article'][0]['TITLE']?></h3></a>
 				<p><?=$data['article'][0]['DES']?></p>
 			</div>
@@ -16,7 +16,7 @@
 	</div>
 	<div class="second-post">
 		<div class="row" data-equalizer="second-post">
-			<div class="column medium-8 small-12 border br" data-equalizer-watch="second-post">
+			<div class="column medium-7 small-12" data-equalizer-watch="second-post">
 				<h3>Articles</h3>
 				<ul class="nostyle-list">
 					<?php 
@@ -50,12 +50,19 @@
 				</li>
 				</ul>
 			</div>
-			<div class="column medium-4" data-equalizer-watch="second-post">
+			<div class="column medium-1"></div>
+			<div class="column medium-4 border bl" data-equalizer-watch="second-post">
 				<h3>Ads</h3>
 				<h3>Bits</h3>
 				<ul class="nostyle-list">
 					<?php 
-					for ( $i = 0; $i<4; $i++ ) {
+					if ( sizeof($data['bits']) < 4 ) {
+						$total = sizeof($data['bits']);
+					} else {
+						$total = 4;
+					}
+
+					for ( $i = 0; $i<$total; $i++ ) {
 					?>
 					<li class="border bb">
 						<a href="<?=PUBLICPATH.$data['bits'][$i]['LINK']?>">
@@ -66,6 +73,7 @@
 					<?php
 					}
 					?>
+					<li><a href="#">More</a></li>
 				</ul>
 			</div>
 		</div>

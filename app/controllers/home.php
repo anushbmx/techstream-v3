@@ -38,12 +38,13 @@ class Home extends Controller
 			if( $article->count() ) {
 				$data = objectToArray( $article->data() );
 				$data['FULLTEXT'] = str_replace('[IMAGE]', MEDIAPATH , $data['FULLTEXT']);
-				switch ( $article->data()->TYPE ) {
+				$data['sidebar']['article']	= objectToArray($article->articleList(0,'TYPE', 0,5));
+				switch ( $article->data()->TEMPLATE ) {
 					case 0:
 						$this->view('home/article.html',$data);
 						break;
 
-					case 0:
+					case 1:
 						$this->view('home/bits.html',$data);
 						break;
 					
@@ -58,25 +59,27 @@ class Home extends Controller
 				$section  = $article->articleList($parameter[0],'SECURL');
 
 				if( $section ) {
-					$start = 0;
-					$page = 0;
-					$limit = 10;			// Number of articles on a page
+					$data['start'] = 0;
+					$data['page']  = 1;
+					$data['limit'] = 10;			// Number of articles on a page
+					$data['sectionUrl'] = PUBLICPATH . $parameter[0];
 					$total = $article->count();
-
+					$data['totalArticle'] 	= $total;
 					if ( ! isset($parameter[1]) || $parameter[1] < 1 ) {
 						$parameter[1] = 1;
 					}
 
 					if( is_numeric($parameter[1]) ) {
-						$page = $parameter[1]-1;
-						$start = $limit * $page;
-						if( $start >= $total ) {
+						$data['page']  = $parameter[1];
+						$data['start'] = $data['limit']  * ($parameter[1]-1) ;
+						if( $data['start'] >= $total ) {
 							// Redirect to 404
 							echo "no found";
 							die();
 						}
 					}
-					$data['items'] = objectToArray($article->articleList($parameter[0],'SECURL', $start,$limit) );					
+
+					$data['items'] = objectToArray($article->articleList($parameter[0],'SECURL', $data['start'],$data['limit'] ) );					
 					$data['TITLE'] = $data['items'][0]['SEC'];
 					if($parameter[0] == 'Bits' ) {
 						$this->view('home/list.bits.html',$data);
