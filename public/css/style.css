@@ -14,6 +14,16 @@
 
 /* Styles */
 
+.center-element-container {
+	position: relative;
+}
+
+.center-element {
+	margin-top: 0px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
 /* Genearal Styles */
 a {
 	color: rgb(0, 102, 204,1);
@@ -45,6 +55,7 @@ h1, h2, h3, h4, h5, h6 {
 	color: rgba(0,0,0,0.8);
 	font-weight: bold;
 	letter-spacing: -1px;
+	line-height: 1.2;
 	text-transform: capitalize; 
 }
 
@@ -52,73 +63,40 @@ h1.post-title{
 	font-size: 3.25rem;
 }
 
+.section-heading-container{
+	padding-top: 15px;
+	margin-bottom: 10px;
+}
+
+a.section-heading{
+	color: rgba(0,0,0,0.6);
+}
+
+.section-heading {
+	border-top: 1px solid rgba(0, 0, 0, 0.44);
+	font-size: 0.8rem;
+	letter-spacing: 0.1em;
+	margin-top: -16px;
+	padding-top: 16px;
+	text-transform: uppercase;
+}
+
 p{
-	font-family: "Merriweather Sans";
+	font-family: "Merriweather";
 	font-size: 0.9rem;
 	line-height: 1.6em;
 	color: rgba(0,0,0,0.8);
 	font-weight: 100;
 }
-
-
-.article {
-
-}
-	.article p{
-		font-family: "Merriweather";
-		font-size: 1.1rem;
-		line-height: 2rem;
-		color: rgba(0,0,0,0.8);
-		font-weight: 100;
-	}
-
-	.article p a{
-		color: inherit !important;
-		font-style: italic;
-		text-decoration: underline;
-	}
-
-	.article p a:hover{
-		text-decoration: line-through;
-	}
-
-	.article p a:visited{
-		text-decoration: none;	
-	}
-
-	.article ul , .article ol{
-		font-family: "Merriweather";
-		font-size: 1.1rem;
-		line-height: 2rem;
-		color: rgba(0,0,0,0.8);
-		font-weight: 100;
-	}
-
-	.article li {
-		margin-bottom: 12px;
-	}
-
-
-
-.article-heading {
-	font-size: 3.4rem;
-	letter-spacing: -1.6px;
-	line-height: 1;
-}
-
-.pages-heading {
-	letter-spacing: -1.6px;
-	line-height: 1.1;
-}
-
-@media only screen and (max-width: 40.0625em) {
-	.article-heading {
-		font-size: 2rem;
-		line-height: 1.2;
-	}
-}
-
 /* === End of styles */
+
+/* == Ads == */
+.ads{
+	background-color: rgba(0,0,0,0.2);
+	height: 180px;
+	width: 100%;
+}
+
 /* Utlity Classes */
 .block {
 	display: block;
@@ -244,6 +222,22 @@ p{
 	margin-bottom: 1em  !important;
 }
 
+.push-3, .push-3-right {
+	margin-right: 1.5em !important;
+}
+
+.push-3, .push-3-left {
+	margin-left: 1.5em  !important;
+}
+
+.push-3, .push-3-top {
+	margin-top: 1.5em  !important;
+}
+
+.push-3, .push-3-bottom {
+	margin-bottom: 1.5em  !important;
+}
+
 .push-4, .push-4-right {
 	margin-right: 2em !important;
 }
@@ -291,7 +285,7 @@ p{
 
 img {
 	display: block;
-	width: 100%;
+	max-width: 100%;
 }
 
 /* Template Styles */
@@ -313,6 +307,104 @@ img {
 		width: 90px;
 	}
 
+/* == Content == */
+
+/* Article & Pages */
+.article {
+
+}
+	.article p{
+		font-family: "Merriweather";
+		font-size: 1.1rem;
+		line-height: 2rem;
+		color: rgba(0,0,0,0.8);
+		font-weight: 100;
+	}
+
+	.article p a{
+		color: inherit !important;
+		font-style: italic;
+		text-decoration: underline;
+	}
+
+	.article p a:hover{
+		text-decoration: line-through;
+	}
+
+	.article p a:visited{
+		text-decoration: none;	
+	}
+
+	.article ul , .article ol{
+		font-family: "Merriweather";
+		font-size: 1.1rem;
+		line-height: 2rem;
+		color: rgba(0,0,0,0.8);
+		font-weight: 100;
+	}
+
+	.article li {
+		margin-bottom: 12px;
+	}
+
+	.article img {
+		margin: 0 auto;
+	}
+
+	.article img > small {
+		text-align: center;
+	}
+
+	.social-links-vertical li {
+		margin-top: 0.5rem;
+	}
+
+	.social-links-vertical a {
+		border-bottom: 1px dotted rgba(0, 0, 0, 0.2);
+		color: inherit !important;
+		display: block;
+		padding-bottom: 0.25rem;
+	}
+
+	.social-links-vertical a:hover {
+		text-decoration: underline;
+	}
+
+/* Temp */
+
+	.article .post{
+		visibility: hidden;
+		display: none;
+	}
+
+	.article > h1 {
+		display: none;
+	}
+
+.article-heading {
+	font-size: 3.4rem;
+	letter-spacing: -1.6px;
+	line-height: 1;
+}
+
+.pages-heading {
+	letter-spacing: -1.6px;
+	line-height: 1.1;
+}
+
+.pages-short-description {
+	color: rgba(0,0,0,0.6);
+	font-style: italic;
+}
+
+@media only screen and (max-width: 40.0625em) {
+	.article-heading {
+		font-size: 2rem;
+		line-height: 1.2;
+	}
+}
+
+/* == Footer == */
 #footer {
 	background: rgba(0,0,0,0.1);
 	font-size: 0.83rem;
@@ -338,12 +430,84 @@ img {
 
 /* Index Page Tempate */
 .featured-post{
-	position: relative;
+	
 }
-	.featured-post-description{
-		margin-top: 0px;
-		position: absolute;
-		right: 0px;
-		top: 50%;
-		transform: translateY(-50%);
+	.featured-post-description-container {
+		right: 0 !important;
+	}
+
+	@media only screen and (max-width: 64.0625em) {
+		.featured-post-heading  {
+			font-size: 1.8rem;
+		}
+	}
+
+.second-post {
+
+}
+	.post-title-3{
+		font-size: 1.6rem;
+		line-height: 1;
+		letter-spacing: -0.08rem;
+	}
+
+	.post-list {
+
+	}
+		.post-list > li {
+			border-bottom: 1px solid rgba(0,0,0,0.1);
+		}
+
+		.post-list li:last-child {
+			border: none;
+		}
+
+	.side-list{
+		
+	}
+		.side-list li {
+			border-bottom: 1px solid rgba(0,0,0,0.1);
+		}
+
+		.side-list li:last-child {
+			border: none;
+		}
+
+		a .side-list-title {
+			font-size: 1.2rem;
+			font-weight: normal;
+			line-height: 1;
+			margin: 0;
+			padding: 0;
+		}
+
+		a:hover .side-list-title {
+			text-decoration: underline;
+		}
+
+.third-post{
+
+}
+	.post-title-2{
+		font-size: 1.4rem;
+		line-height: 1;
+		letter-spacing: -0.05rem;
+	}
+
+	.post-meta {
+		color: rgba(0,0,0,0.4);
+		font-size: 0.75rem;
+		font-weight: 100;
+	}
+
+	.post-meta li{
+		margin-left: 0.2rem;
+	}
+
+	.post-meta .divide:after {
+	    content: ".";
+	}
+
+	.third-post a{
+		display: block;
 	}
