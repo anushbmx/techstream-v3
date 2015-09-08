@@ -18,7 +18,7 @@ class Home extends Controller
 			$data['bits']  = objectToArray($article->articleList('Bits','SEC',0,10));
 			$data['article']  = objectToArray($article->articleList(0,'TEMPLATE',0,10));
 			$data['username'] = "Anush";
-			$data['TITLE'] = "it works";
+			$data['TITLE'] = "Tech Strem";
 
 			$this->view('home/index.html',$data);
 
@@ -57,7 +57,7 @@ class Home extends Controller
 
 
 				$section  = $article->articleList($parameter[0],'SECURL');
-
+				$total = $article->count();
 				if( $section ) {
 					$data['start'] = 0;
 					$data['page']  = 1;
@@ -78,9 +78,10 @@ class Home extends Controller
 							die();
 						}
 					}
-
+					$data['sidebar']['article']	= objectToArray($article->articleList(0,'TYPE', 0,5));
 					$data['items'] = objectToArray($article->articleList($parameter[0],'SECURL', $data['start'],$data['limit'] ) );					
-					$data['TITLE'] = $data['items'][0]['SEC'];
+					$data['TITLE'] = $data['items'][1]['SEC'];
+					$data['TOTAL'] = $total;
 					if($parameter[0] == 'Bits' ) {
 						$this->view('home/list.bits.html',$data);
 					} else {

@@ -23,8 +23,9 @@
 						<h3 class="section-heading">Advert</h3>
 					</div>
 				</div>
+				<div class="ads"></div>
 			</div>
-			<div class="column small-12 medium-9 large-8 large-uncentered small-centered push-4-top">
+			<div class="column small-12 medium-9 large-8 large-uncentered small-centered push-4-top push-4-bottom">
 				<section class="article">
 					<?=$data['FULLTEXT']?>
 				</section>

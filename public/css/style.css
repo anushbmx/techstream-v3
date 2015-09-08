@@ -81,6 +81,9 @@ a.section-heading{
 	text-transform: uppercase;
 }
 
+.featured-post-heading {
+}
+
 p{
 	font-family: "Merriweather";
 	font-size: 0.9rem;
@@ -349,6 +352,7 @@ img {
 
 	.article img {
 		margin: 0 auto;
+		margin-bottom: 1.25rem;
 	}
 
 	.article img > small {
@@ -382,14 +386,14 @@ img {
 	}
 
 .article-heading {
-	font-size: 3.4rem;
-	letter-spacing: -1.6px;
+	font-size: 3.2rem;
 	line-height: 1;
+	letter-spacing: -2px;
 }
 
 .pages-heading {
-	letter-spacing: -1.6px;
-	line-height: 1.1;
+	line-height: 1;
+	letter-spacing: -2px;
 }
 
 .pages-short-description {
@@ -448,7 +452,6 @@ img {
 	.post-title-3{
 		font-size: 1.6rem;
 		line-height: 1;
-		letter-spacing: -0.08rem;
 	}
 
 	.post-list {
@@ -491,7 +494,6 @@ img {
 	.post-title-2{
 		font-size: 1.4rem;
 		line-height: 1;
-		letter-spacing: -0.05rem;
 	}
 
 	.post-meta {

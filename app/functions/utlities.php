@@ -158,7 +158,7 @@ function pagination( $numposts = 0, $limit, $start = 0, $url = NULL , $pages_to_
         if($current_page!= $max_page)
             echo '<li> <a href="'.$url.'/'.($current_page+1).'">Next <i class="fa fa-chevron-right"></i></a></li>';
         else
-            echo '<li class="arrow unavailable" aria-disabled="true"><a href="">Next <i class="fa fa-chevron-right"></i></a></li>';
+            echo '<li class="arrow unavailable"><a href="">Next <i class="fa fa-chevron-right"></i></a></li>';
 
         echo '</ul>';
 
