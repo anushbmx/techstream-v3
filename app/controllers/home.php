@@ -45,7 +45,7 @@ class Home extends Controller
 						break;
 
 					case 1:
-						$this->view('home/page.html',$data);
+						$this->view('home/bits.html',$data);
 						break;
 					
 					default:
@@ -56,7 +56,18 @@ class Home extends Controller
 				$parameter = explode('/', $parameter);
 
 
-				$section  = $article->articleList($parameter[0],'SECURL');
+				if ( $parameter[0] == 'All' ) {
+					$targetParameter = 0;
+					$targetEntry	= 'TEMPLATE';	
+				} else {
+					$targetParameter = $parameter[0];
+					$targetEntry	= 'SECURL';
+				}
+				
+
+
+				$section  = $article->articleList($targetParameter,$targetEntry);
+
 				$total = $article->count();
 				if( $section ) {
 					$data['start'] = 0;
@@ -79,7 +90,7 @@ class Home extends Controller
 						}
 					}
 					$data['sidebar']['article']	= objectToArray($article->articleList(0,'TYPE', 0,5));
-					$data['items'] = objectToArray($article->articleList($parameter[0],'SECURL', $data['start'],$data['limit'] ) );					
+					$data['items'] = objectToArray($article->articleList($targetParameter,$targetEntry, $data['start'],$data['limit'] ) );					
 					$data['TITLE'] = $data['items'][1]['SEC'];
 					$data['TOTAL'] = $total;
 					if($parameter[0] == 'Bits' ) {
@@ -88,10 +99,8 @@ class Home extends Controller
 						$this->view('home/list.article.html',$data);						
 					}
 				} else {
-					$article = new Article('NotFound');
-					$data = objectToArray( $article->data() );
-					$data['sidebar'] = true;
-					$this->view('home/page.html',$data);
+					$data['TITLE'] = "No found";
+					$this->view('home/bits.html',$data);
 				}
 
 			}
