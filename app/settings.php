@@ -43,6 +43,16 @@ $GLOBALS['config'] = array(
 	)
 );
 
+//** Social Links *//
+/* Facebook */
+define('FACEBOOKURL', 'https://facebook.com/' . FACEBOOKUSERNAME);
+
+/* Twitter */
+define('TWITTER', 'https://twitter.com/' . TWITTERUSERNAME);
+
+/* Google Plus */
+define('GOOGLEPLUS', 'http://plus.google.com/' . GOOGLEPLUSUSERNAME);
+
 
 /** Table Name Definitions */
 define('USERS_TABLE', 'users');

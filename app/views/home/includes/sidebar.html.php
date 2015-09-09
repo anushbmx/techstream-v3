@@ -26,29 +26,30 @@ if(isset($data['sidebar'])) {
 				</div>
 			</div>
 		</form>
+		<?php if($data['sidebar']['article']) { ?>
 
-
-		<div class="clearfix">
-			<div class="section-heading-container">
-				<h3 class="section-heading left">Last 5 Articles</h3>
+			<div class="clearfix">
+				<div class="section-heading-container">
+					<h3 class="section-heading left">Last 5 Articles</h3>
+				</div>
 			</div>
-		</div>
-		<ol class="nostyle-list side-list border bb padd-2-bottom">	
-			<?php 
-			$total = sizeof($data['sidebar']['article']);
+			<ol class="nostyle-list side-list border bb padd-2-bottom">	
+				<?php 
+				$total = sizeof($data['sidebar']['article']);
 
-			for ( $i = 0; $i<$total; $i++ ) {
-			?>
-			<li class="padd-1-top padd-1-bottom">
-				<a href="<?=PUBLICPATH.$data['sidebar']['article'][$i]['LINK']?>">
-					<h4 class="side-list-title"><?=$data['sidebar']['article'][$i]['TITLE']?></h4>
-				</a>
-				<small><?=$data['sidebar']['article'][$i]['SEC']?></small>
-			</li>
-			<?php
-			}
-			?>
-		</ol>
+				for ( $i = 0; $i<$total; $i++ ) {
+				?>
+				<li class="padd-1-top padd-1-bottom">
+					<a href="<?=PUBLICPATH.$data['sidebar']['article'][$i]['LINK']?>">
+						<h4 class="side-list-title"><?=$data['sidebar']['article'][$i]['TITLE']?></h4>
+					</a>
+					<small><?=$data['sidebar']['article'][$i]['SEC']?></small>
+				</li>
+				<?php
+				}
+				?>
+			</ol>
+		<?php } ?>
 		<div class="clearfix">
 			<div class="section-heading-container">
 				<h3 class="section-heading left">News Letter</h3>

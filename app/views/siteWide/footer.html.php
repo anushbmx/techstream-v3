@@ -1,19 +1,19 @@
-	<section id="footer">
-		<div class="row padd-2-top padd-2-bottom link-1 border bb">
-			<div class="column small-6">
+	<section id="footer" class="padd-4-top padd-4-bottom">
+		<div class="row padd-4-bottom link-1 border bb">
+			<div class="column small-12 medium-6 large-6 ">
 				<ul class="inline-list nospace">
-					<li><a href="">Link 1</a></li>
-					<li><a href="">Link 1</a></li>
-					<li><a href="">Link 1</a></li>
-					<li><a href="">Link 1</a></li>
+					<li><a href="<?=PUBLICPATH?>About">About</a></li>
+					<li><a href="<?=PUBLICPATH?>All">All Article</a></li>
+					<li><a href="<?=PUBLICPATH?>Newsletter">News Letter</a></li>
+					<li><a href="<?=PUBLICPATH?>Contact">Contact</a></li>
 				</ul>
 			</div>
-			<div class="column small-6">
+			<div class="column small-12 medium-6 large-6 ">
 				<ul class="inline-list nospace right">
-					<li><a href="">Link 1</a></li>
-					<li><a href="">Link 1</a></li>
-					<li><a href="">Link 1</a></li>
-					<li><a href="">Link 1</a></li>
+					<li>Social Links</li>
+					<li><a href="<?=FACEBOOKURL?>">Facebook</a></li>
+					<li><a href="<?=TWITTER?>">Twitter</a></li>
+					<li><a href="<?=GOOGLEPLUS?>">Google +</a></li>
 				</ul>
 			</div>
 		</div>
@@ -27,22 +27,16 @@
 				</ul>
 			</div>
 		</div>
-		<div class="row push-2-bottom">
+		<div class="row">
 			<div class="column small-6">
 				<ul class="inline-list nospace">
-					<li><a href="">Link 1</a></li>
-					<li><a href="">Link 1</a></li>
-					<li><a href="">Link 1</a></li>
-					<li><a href="">Link 1</a></li>
+					<li><a href="<?=PUBLICPATH?>Privacy">Privacy</a></li>
+					<li><a href="<?=PUBLICPATH?>Licence">Licence</a></li>
+					<li><a href="<?=PUBLICPATH?>Credits">Credits</a></li>
 				</ul>
 			</div>
-			<div class="column small-6">
-				<ul class="inline-list nospace right">
-					<li><a href="">Link 1</a></li>
-					<li><a href="">Link 1</a></li>
-					<li><a href="">Link 1</a></li>
-					<li><a href="">Link 1</a></li>
-				</ul>
+			<div class="column small-6 text-right">
+				&copy; <?php=date('Y')?> Tech Stream. All code <a href="http://opensource.org/licenses/MIT">MIT license</a>
 			</div>
 		</div>
 	</section>

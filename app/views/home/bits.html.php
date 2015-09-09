@@ -24,8 +24,8 @@
 	</div>
 
 	<div class="article-content border bt">
-		<div class="row">
-			<div class="column small-12 medium-8 large-8 border br padd-4-top push-4-bottom">
+		<div class="row" data-equalizer="page-content">
+			<div class="column small-12 medium-8 large-8 border br padd-4-top push-4-bottom" data-equalizer-watch="page-content">
 				<section class="article push-4-bottom">
 					<?=$data['FULLTEXT']?>
 				</section>
@@ -37,7 +37,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="column small-12 medium-4 large-4">
+			<div class="column small-12 medium-4 large-4" data-equalizer-watch="page-content">
 				<?php include 'includes/sidebar.html.php'; ?>
 			</div>
 		</div>

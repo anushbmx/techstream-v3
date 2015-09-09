@@ -45,7 +45,7 @@ class Home extends Controller
 						break;
 
 					case 1:
-						$this->view('home/bits.html',$data);
+						$this->view('home/page.html',$data);
 						break;
 					
 					default:
@@ -88,8 +88,10 @@ class Home extends Controller
 						$this->view('home/list.article.html',$data);						
 					}
 				} else {
-					$data['TITLE'] = "No found";
-					$this->view('home/bits.html',$data);
+					$article = new Article('NotFound');
+					$data = objectToArray( $article->data() );
+					$data['sidebar'] = true;
+					$this->view('home/page.html',$data);
 				}
 
 			}

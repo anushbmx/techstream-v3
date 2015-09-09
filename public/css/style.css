@@ -331,7 +331,7 @@ img {
 	}
 
 	.article p a:hover{
-		text-decoration: line-through;
+		color : rgb(0, 120, 160) !important;
 	}
 
 	.article p a:visited{
@@ -411,12 +411,23 @@ img {
 /* == Footer == */
 #footer {
 	background: rgba(0,0,0,0.1);
-	font-size: 0.83rem;
+	font-size: 0.7rem;
 	font-weight:100;
 }
+	#footer ul, #footer li {
+		font-size: 0.8rem;
+	}
 
 	#footer, #footer a {
 		color: rgba(0,0,0,1);
+	}
+
+	#footer a:hover {
+		text-decoration: underline;
+	}
+
+	#footer .link-1 a {
+		text-decoration: underline;
 	}
 
 	#footer .link-1 {
@@ -424,7 +435,7 @@ img {
 	}
 
 	#footer .link-1 a {
-		font-weight: 800;
+		font-weight: bold;
 	}
 
 	.friendLinks li {
@@ -491,7 +502,7 @@ img {
 .third-post{
 
 }
-	.post-title-2{
+	.post-title-2 {
 		font-size: 1.4rem;
 		line-height: 1;
 	}
@@ -502,8 +513,12 @@ img {
 		font-weight: 100;
 	}
 
-	.post-meta li{
+	.post-meta li {
 		margin-left: 0.2rem;
+	}
+
+	.post-meta a:hover {
+		text-decoration: underline;
 	}
 
 	.post-meta .divide:after {
