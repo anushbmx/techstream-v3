@@ -30,8 +30,8 @@ $GLOBALS['config'] = array(
 		'db'				=> DB_NAME
 	),
 	'remember'  => array(
-		'cookie_name'		=> COOKIE_NAME,
-		'cookie_expiry'	    => COOKIE_EXPIRY
+		'cookie_name'		=> 'techstream_cookie',
+		'cookie_expiry'	    => 36000
 	),
 	'session'	=> array(
 		'session_name'		=> 'user',
