@@ -19,9 +19,7 @@ class Controller
 	public function view($view, $data = [])
 	{
 		require_once APPPATH . 'views/header.php';
-		require_once APPPATH . 'views/siteWide/header.html.php';
 		require_once APPPATH . 'views/' .$view. '.php';
-		require_once APPPATH . 'views/siteWide/footer.html.php';
 		require_once APPPATH . 'views/footer.php';
 	}
 

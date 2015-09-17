@@ -1,3 +1,4 @@
+<?php include 'includes/header.html.php'; ?>
 <section id="content">
 	<div class="list-head">
 		<div class="row padd-2-bottom center-element-container">
@@ -71,3 +72,4 @@
 		</div>
 	</div>
 </section>
+<?php include 'includes/footer.html.php'; ?>

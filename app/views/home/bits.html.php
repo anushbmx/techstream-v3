@@ -1,3 +1,4 @@
+<?php include 'includes/header.html.php'; ?>
 <section id="content">
 	<div class="article-head">
 		<div class="row padd-2-bottom">
@@ -43,3 +44,4 @@
 		</div>
 	</div>
 </section>
+<?php include 'includes/footer.html.php'; ?>
