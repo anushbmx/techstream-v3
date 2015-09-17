@@ -11,13 +11,13 @@
 			<div class="hide-for-small column small-4 medium-5 end text-center center-element hide show-for-large-only featured-post-description-container">
 				<div class="featured-post-description">
 					<a href="<?=PUBLICPATH.$data['article'][0]['LINK']?>"><h2 class="featured-post-heading"><?=$data['article'][0]['TITLE']?></h2></a>
-					<p class="push-4-top"><?=$data['article'][0]['DES']?></p>
+					<p class="push-4-top"><?=$data['article'][0]['DES']?>... <a href="<?=PUBLICPATH.$data['article'][0]['LINK']?>" class="p-anchor">Read More</a></p>
 				</div>
 			</div>
 			<div class="hide-for-small column small-4 medium-5 end text-center hide-for-large">
 				<div class="featured-post-description">
 					<a href="<?=PUBLICPATH.$data['article'][0]['LINK']?>"><h2 class="featured-post-heading"><?=$data['article'][0]['TITLE']?></h2></a>
-					<p class="push-4-top"><?=$data['article'][0]['DES']?></p>
+					<p class="push-4-top"><?=$data['article'][0]['DES']?>... <a href="<?=PUBLICPATH.$data['article'][0]['LINK']?>" class="p-anchor"> Read More</a></p>
 				</div>
 			</div>
 		</div>	
@@ -52,7 +52,7 @@
 							</div>
 							<div class="column small-12 medium-12 medium-only-text-center large-7">
 								<a href="<?=PUBLICPATH.$data['article'][$i]['LINK']?>"><h3 class="post-title-3 push-2-bottom push-2-top"><?=$data['article'][$i]['TITLE']?></h3></a>
-								<p><?=elliStr($data['article'][$i]['DES'],200)?></p>
+								<p><?=elliStr($data['article'][$i]['DES'],200)?>... <a href="<?=PUBLICPATH.$data['article'][$i]['LINK']?>" class="p-anchor">Read More</a></p>
 								<ul class="inline-list post-meta">
 									<li><a href="<?=PUBLICPATH . $data['article'][$i]['SECURL']?>"><?=$data['article'][$i]['SEC']?></a></li>
 									<li class="divide"></li>
@@ -127,16 +127,16 @@
 					<li class="divide"></li>
 					<li><a href="<?=PUBLICPATH.$data['article'][$i]['LINK']?>#comments">Comments</a></li>
 				</ul>
-				<p><?=elliStr($data['article'][$i]['DES'],150)?></p>
+				<p><?=elliStr($data['article'][$i]['DES'],150)?>... <a href="<?=PUBLICPATH.$data['article'][$i]['LINK']?>" class="p-anchor">Read More</a></p>
 			</div>
 			<?php
 			}
 			?>
 		</div>
-		<div class="row">
-			<div class="text-center border padd-4">
-				<a href="">See All </a>
-			</div>
+	</div>
+	<div class="row">
+		<div class="text-center border padd-4">
+			<a href="<?=PUBLICPATH?>All" class="button nospace round">All Articles</a>
 		</div>
 	</div>
 </section>
