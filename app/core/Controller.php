@@ -23,4 +23,17 @@ class Controller
 		require_once APPPATH . 'views/footer.php';
 	}
 
+	public function loginRequired ( $user ) {
+		if ( ! $user->isLoggedIn() ) {
+			Redirect::to(PUBLICPATH . 'admin/login');
+		}
+	}
+
+	public function logoutRequired ( $user ) {
+		if ( $user->isLoggedIn() ) {
+			Redirect::to( PUBLICPATH . 'admin/dashboard');
+		}
+
+	}
+
 }

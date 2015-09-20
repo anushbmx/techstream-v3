@@ -90,12 +90,12 @@ class User
 	}
 
 	/**
-	 * Find User from User ID or email
+	 * Find User from User ID or username
 	 *
-	 * @param string/integer $user email or the User ID
-	 * @param string $field the Identifyer to be looked. eg email ( Default ) or user_id
+	 * @param string/integer $user username or the User ID
+	 * @param string $field the Identifyer to be looked. eg username ( Default ) or user_id
 	 */
-	public function find ( $user = null, $field = 'email' ) {
+	public function find ( $user = null, $field = 'username' ) {
 
 		if ( $user  && $field ) {
 			$data = $this->_db->get( USERS_TABLE, array( $field, '=', $user ) );
@@ -145,40 +145,24 @@ class User
 	 * initiated the function. If user data exists in the object logs the user.
 	 * Used by cookie login functions to log the user in case user has checked remember me and the session is expired.
 	 *
-	 * @param String $email user's email.
+	 * @param String $username user's username.
 	 * @param string $password user's password.
 	 * @param boolen $remember true to set user remember cookie.
 	 */
-	public function login ( $email = null, $password = null, $remember = false) {
+	public function login ( $username = null, $password = null, $remember = false) {
 
 		/*
 		 * If Login is called without any parameters, check if user data is pulled in. If user data exist log user in
 		 */
-		if ( ! $email && ! $password && $this->exists() ) {
+		if ( ! $username && ! $password && $this->exists() ) {
 			Session::put( $this->_sessionName, $this->data()->user_id);
 		} else {
 
-			$user = $this->find( $email );
+			$user = $this->find( $username );
 
 			if ( $user ) {
 				if( $this->data()->password == md5($password) ) {
 					Session::put( $this->_sessionName, $this->data()->user_id );
-
-					if ( $remember ) {
-						$hash = Hash::unique();
-						$hasCheck = $this->_db->get( SESSIONS_TABLE, array('user_id', '=', $this->data()->user_id ) );
-						if ( ! $hasCheck->count() ) {
-							$this->_db->insert( SESSIONS_TABLE, array(
-								'user_id' => $this->data()->user_id,
-								'hash'	  => $hash,
-								'time'	  => date("Y-m-d  H:i:s",time())
-							));
-						} else {
-							$hash = $hasCheck->first()->hash;
-						}
-						Cookie::put( $this->_cookieName, $hash, $this->_cookieExpiry);
-					}
-
 					return true;
 				}
 			}

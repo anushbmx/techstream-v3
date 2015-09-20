@@ -24,6 +24,16 @@
 	top: 50%;
 	transform: translateY(-50%);
 }
+
+[data-abide] small.error, .error2{
+    background-color: transparent;
+    color: rgb(240, 65, 36);
+    font-size: 0.7rem !important;
+    margin: 0px !important;
+    padding: 0px;
+    position: absolute;
+}
+
 /* Genearal Styles */
 a {
 	color: rgb(85, 172, 238);
