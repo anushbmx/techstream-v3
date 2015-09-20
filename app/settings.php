@@ -43,6 +43,22 @@ $GLOBALS['config'] = array(
 	)
 );
 
+/** Goball variables Other than configuration */
+$GLOBALS['strings'] = array(
+	'catagory'	=> array(
+		''				  => 'Nill',
+		'Web-Design' 	  => 'Web Desgn',
+		'Web-Development' => 'Web Development',
+		'Bits'  		  => 'Bits'	
+	),
+	'subcatagory'	=> array(
+		'' 		=> 'Nill',
+		'HTML'	=> 'HTML',
+		'PHP'	=> 'PHP',	
+		'CSS'	=> 'CSS'
+	)
+);
+
 //** Social Links *//
 /* Facebook */
 define('FACEBOOKURL', 'https://facebook.com/' . FACEBOOKUSERNAME);

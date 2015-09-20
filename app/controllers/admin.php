@@ -21,7 +21,6 @@ class Admin extends Controller
 	{
 
 		$this->model('User');
-
 		$user = new User();
 
 		$this->logoutRequired($user);
@@ -65,11 +64,55 @@ class Admin extends Controller
 	public function logout()
 	{
 		$this->model('User');
-
 		$user = new User();
 
 		$user->logout($user);
 
 		Redirect::to( PUBLICPATH .  'admin');
+	}
+
+	public function post( $post_id = 'new' ) {
+
+		$this->model('User');
+		$user = new User();
+
+		$this->loginRequired($user);
+
+		if( Input::exists() /*&& Token::check( Input::get( 'token' ) )*/ ) {
+			$validate = new Validate();
+
+			// Validation for Inputs
+			$validation = $validate->check($_POST, array(
+				'title'		=> array(
+					'name'	   => 'Post title',
+					'required' => true,
+					'min' 	   => 10
+				),
+				'description'   => array(
+					'name'		=> 'description',
+					'required'	=> true,
+					'min'		=> 50
+				),
+				'featuredimage' => array(
+					'name'		=> 'Featured Image',
+					'required'	=> true
+				)	
+			));
+
+			if( $validate->passed() ) {
+				
+			} else {
+				$data = $validate->errors();
+			}
+
+		} 
+
+
+		$data['CATAGORY']	= Strings::get('catagory');
+		$data['SUBCATAGORY']	= Strings::get('subcatagory');
+		$data['token'] = Token::generate();
+		$data['TITLE'] = "Create New Post";
+		$this->view('admin/post.html',$data);
+
 	}
 }

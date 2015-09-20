@@ -27,6 +27,18 @@ function escape($string)
     return htmlentities($string, ENT_QUOTES, DB_CHARSET);
 }
 
+
+/**
+ * Remove Hyphens
+ *
+ * Returns the String removing the hyphens in it.
+ *
+ * @param String $string
+ */
+function removeHyphen($string) {
+    return str_replace("-", " ", $string);
+}
+
 /**
  * Trims Paragraphs
  *
