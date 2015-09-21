@@ -74,7 +74,10 @@ class Admin extends Controller
 	public function post( $post_id = 'new' ) {
 
 		$this->model('User');
+		$this->model('Article');
+
 		$user = new User();
+		$article = new Article();
 
 		$this->loginRequired($user);
 
@@ -96,15 +99,40 @@ class Admin extends Controller
 				'featuredimage' => array(
 					'name'		=> 'Featured Image',
 					'required'	=> true
-				)	
+				),
+				'link'			=> array(
+					'name'		=> 'Article Link',
+					'required'	=> true
+				)
 			));
 
 			if( $validate->passed() ) {
+				$template = Strings::get('catagory');
 				
+
+				try {
+					$article->create(array(
+						'TITLE'     	=> Input::get('title'),
+						'SECURL'       	=> Input::get('catagory'),
+						'CREATED_DATE'  => date("Y-m-d  H:i:s",time()),
+						'IMG'			=> Input::get('featuredimage'),
+						'DES'			=> Input::get('description'),
+						'LINK'			=> Input::get('link'),
+						'TEMPLATE'		=> $template[Input::get('catagory')]
+					));
+
+					// Get the created article details from LINK to redirect the user to edit it.
+					$newarticle = new Article(Input::get('link'));
+					Redirect::to( ADMINPATH . 'post/' . $newarticle->data()->SL_NO );
+
+
+				} catch  (Exception $e) {
+					die( $e->getMessage() );
+				}
+
 			} else {
 				$data = $validate->errors();
 			}
-
 		} 
 
 

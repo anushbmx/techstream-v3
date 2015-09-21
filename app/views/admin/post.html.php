@@ -24,11 +24,11 @@
 				<div class="row">
 					<div class="large-6 small-12 columns">
 						<label>Catagory
-							<select>
+							<select name="catagory">
 							<?php
-							foreach ($data['CATAGORY'] as $key => $value) {
+							foreach ($data['CATAGORY'] as $key=>$value) {
 							?>
-								<option value="<?=$key?>"><?=removeHyphen($value)?></option>
+								<option value="<?=$key?>"><?=removeHyphen($key)?></option>
 							<?php 
 							}
 							?>
@@ -39,13 +39,22 @@
 						<label>Sub Catagory ( Optional )
 							<select>
 							<?php
-							foreach ($data['SUBCATAGORY'] as $key => $value) {
+							foreach ($data['SUBCATAGORY'] as $value) {
 							?>
-								<option value="<?=$key?>"><?=removeHyphen($value)?></option>
+								<option value="<?=$value?>"><?=removeHyphen($value)?></option>
 							<?php 
 							}
 							?>
 							</select>
+						</label>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="large-12 columns">
+						<label>Link
+						<input type="text" name="link" placeholder="" />
+						<?php if ( ! empty($data['error_link'])) : ?> <small class="clRed error2"><?=$data['error_link']?></small> <?php endif; ?>
 						</label>
 					</div>
 				</div>

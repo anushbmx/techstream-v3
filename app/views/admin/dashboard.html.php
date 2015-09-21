@@ -8,7 +8,7 @@
 				</div>
 			</div>
 			<ul class="small-block-grid-3 text-center push-4-top">
-				<li><a class="button transparent">New Post</a></li>
+				<li><a class="button transparent" href="<?=ADMINPATH?>post">New Post</a></li>
 				<li><a class="button transparent">Edit Draft</a></li>
 				<li><a class="button success">Published Post</a></li>
 			</ul>
