@@ -9,8 +9,8 @@
 			</div>
 			<ul class="small-block-grid-3 text-center push-4-top">
 				<li><a class="button transparent" href="<?=ADMINPATH?>post">New Post</a></li>
-				<li><a class="button transparent">Edit Draft</a></li>
-				<li><a class="button success">Published Post</a></li>
+				<li><a class="button transparent" href="<?=ADMINPATH?>viewpost/draft">Edit Draft</a></li>
+				<li><a class="button success" href="<?=ADMINPATH?>viewpost">Published Post</a></li>
 			</ul>
 		</div>
 		<div class="small-12 medium-6 columns">

@@ -31,7 +31,9 @@ class App
 			{
 				$this->method = $url[1];
 				unset($url[1]);
-			} else {
+			} 
+
+			if( isset($url) ) {
 				$this->params[] =  implode('/', $url);
 			}
 
