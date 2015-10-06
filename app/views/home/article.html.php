@@ -28,7 +28,7 @@
 			</div>
 			<div class="column small-12 medium-9 large-8 large-uncentered small-centered push-4-top push-4-bottom">
 				<section class="article">
-					<?=$data['FULLTEXT']?>
+					<?=$data['CONTENT']?>
 				</section>
 			</div>
 			<div class="column large-2 hide-for-medium-down">

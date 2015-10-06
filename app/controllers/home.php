@@ -37,7 +37,7 @@ class Home extends Controller
 			 */
 			if( $article->count() ) {
 				$data = objectToArray( $article->data() );
-				$data['FULLTEXT'] = str_replace('[IMAGE]', MEDIAPATH , $data['FULLTEXT']);
+				$data['CONTENT'] = str_replace('[IMAGE]', MEDIAPATH , $data['CONTENT']);
 				$data['sidebar']['article']	= objectToArray($article->articleList(0,'TYPE', 0,5));
 				switch ( $article->data()->TEMPLATE ) {
 					case 0:

@@ -1,12 +1,16 @@
 <?php include 'includes/header.html.php'; ?>
 <section id="content">
-	<div class="row">
-		<div class="small-12 columns padd-1-bottom border bb">
+	<form data-abide  action="" method="post">
+	<div class="row border bb">
+		<div class="small-12 medium-6 columns padd-1-bottom">
 			<div class="clearfix">
 				<div class="section-heading-container">
 					<h3 class="section-heading left"><?=$data['TITLE']?></h3>
 				</div>
 			</div>
+		</div>
+		<div class="hide-for-small-only medium-6 columns padd-1-bottom text-right padd-1-top">
+			<input type="submit" class="button success tiny  nospace" value="Save" />
 		</div>
 	</div>
 	<div class="row">
@@ -20,7 +24,6 @@
 					</div>
 				</div>
 			</div>
-			<form data-abide  action="" method="post">
 				<div class="row">
 					<div class="large-12 columns">
 						<label>Title
@@ -88,8 +91,8 @@
 				<div class="row">
 					<div class="large-12 columns">
 						<label>Article
-						<textarea name="fulltext" cols="77" rows="30"><?php if ( ! empty($data['FULLTEXT'])) : ?><?=htmlspecialchars($data['FULLTEXT'])?><?php endif; ?></textarea>
-						<?php if ( ! empty($data['error_fulltext'])) : ?> <small class="clRed error2"><?=$data['error_fulltext']?></small> <?php endif; ?>
+						<textarea name="content" cols="77" rows="30"><?php if ( ! empty($data['CONTENT'])) : ?><?=htmlspecialchars($data['CONTENT'])?><?php endif; ?></textarea>
+						<?php if ( ! empty($data['error_content'])) : ?> <small class="clRed error2"><?=$data['error_content']?></small> <?php endif; ?>
 						</label>
 					</div>
 				</div>
@@ -105,10 +108,9 @@
 				
 				<div class="row">
 					<div class="large-12 columns">
-						<input type="submit" class="button expand success" value="Create New Aticle" />
+						<input type="submit" class="button expand success" value="Save" />
 					</div>
 				</div>
-			</form>
 		</div>
 		<div class="small-12 medium-6 columns">
 			<section id="content">
@@ -130,11 +132,12 @@
 
 				<div class="article-content">
 					<section class="article">
-						<?=$data['FULLTEXT']?>
+						<?=$data['CONTENT']?>
 					</section>
 				</div>
 			</section>
 		</div>
 	</div>
+	</form>
 </section>
 <?php include 'includes/footer.html.php'; ?>

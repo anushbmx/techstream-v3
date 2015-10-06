@@ -241,10 +241,6 @@ class Admin extends Controller
 					'link'			=> array(
 						'name'		=> 'Article Link',
 						'required'	=> true
-					),
-					'fulltext'		=> array(
-						'name'		=> 'Article Content',
-						'required'	=> true
 					)
 				));
 
@@ -257,7 +253,7 @@ class Admin extends Controller
 							'TITLE'     	=> Input::get('title'),
 							'SECURL'       	=> Input::get('catagory'),
 							'SUBSEC'		=> Input::get('subsec'),
-							
+							'CONTENT'		=> Input::get('content'),
 							'CREATED_DATE'  => date("Y-m-d  H:i:s",time()),
 							'IMG'			=> Input::get('featuredimage'),
 							'DES'			=> Input::get('description'),

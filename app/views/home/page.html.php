@@ -28,7 +28,7 @@
 		<div class="row" data-equalizer="page-content">
 			<div class="column small-12 medium-8 large-8 border br padd-4-top push-4-bottom" data-equalizer-watch="page-content">
 				<section class="article push-4-bottom">
-					<?=$data['FULLTEXT']?>
+					<?=$data['CONTENT']?>
 				</section>
 			</div>
 			<div class="column small-12 medium-4 large-4" data-equalizer-watch="page-content">
