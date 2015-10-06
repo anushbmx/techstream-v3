@@ -93,9 +93,9 @@ class Article
 
 		if ( $field ) {
 			if ( !$start && !$limit ) {
-				$data = $this->_db->where( ARTICLE_TABLE, "SELECT *", "$field = '$notification' AND STATUS = $status ORDER BY DATE ASC");
+				$data = $this->_db->where( ARTICLE_TABLE, "SELECT *", "$field = '$notification' AND STATUS = $status ORDER BY DATE DESC");
 			} else {
-				$data = $this->_db->where( ARTICLE_TABLE, "SELECT *", "$field = '$notification' AND STATUS = $status ORDER BY DATE ASC LIMIT $start, $limit");
+				$data = $this->_db->where( ARTICLE_TABLE, "SELECT *", "$field = '$notification' AND STATUS = $status ORDER BY DATE DESC LIMIT $start, $limit");
 			}
 
 			if ( $this->_db->count() ) {
