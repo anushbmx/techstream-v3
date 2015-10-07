@@ -5,14 +5,6 @@ MVC Framework
 
 In house crafted framework on MVC architecture
 
-
-Completed
----------
-1. URL processing
-2. Model
-3. Controller
-
-
 Settings
 ========
 
@@ -33,3 +25,8 @@ For Apache Server
 	RewriteCond %{REQUEST_FILENAME} !-d
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+
+Configuring
+===========
+
+Create a file <code>settings-local.php</code> and copy the contents inside settings-local.sample. Fill in the values and hit run.
