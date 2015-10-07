@@ -10,7 +10,13 @@
 			</div>
 		</div>
 		<div class="hide-for-small-only medium-6 columns padd-1-bottom text-right padd-1-top">
-			<input type="submit" class="button success tiny  nospace" value="Save" />
+			<input type="submit" class="button  tiny  nospace" value="Save" />
+			<?php if ( $data['STATUS'] == 1) { ?>
+				<button value="1" class="button tiny nospace alert" name="publish">Un Publish</button>
+			<?php } else { ?>
+				<button value="1" class="button tiny nospace success" name="publish">Publish</button>
+			<?php } ?>
+
 		</div>
 	</div>
 	<div class="row">
@@ -89,9 +95,35 @@
 				</div>
 
 				<div class="row">
+					<div class="large-6 small-12 columns">
+						<label>Type
+							<select name="template">
+							<?php if ( isset($data['TEMPLATE']) || $data['TEMPLATE'] == 0) : ?>
+								<option value="<?=$data['TEMPLATE']?>"><?=$data['TEMPLATES'][$data['TEMPLATE']]?></option>
+							<?php endif; ?>
+							<?php
+							foreach ($data['TEMPLATES'] as $key=>$value) {
+							?>
+								<option value="<?=$key?>"><?=removeHyphen($value)?></option>
+							<?php 
+							}
+							?>
+							</select>
+						</label>
+					</div>
+					<div class="large-6 small-12 columns">
+						<label for="type"> Article | Page</label>
+						<div class="switch round large">
+							<input id="type" type="checkbox" <?php if ( ! empty($data['TYPE']) && $data['TYPE'] ==1 ) : ?> checked="checked" <?php endif; ?> name="type">
+							<label for="type"> Page / Article</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
 					<div class="large-12 columns">
 						<label>Article
-						<textarea name="content" cols="77" rows="30"><?php if ( ! empty($data['CONTENT'])) : ?><?=htmlspecialchars($data['CONTENT'])?><?php endif; ?></textarea>
+						<textarea name="content" cols="77" rows="30"><?php if ( ! empty($data['CONTENT'])) : ?><?=htmlspecialchars_decode($data['CONTENT'])?><?php endif; ?></textarea>
 						<?php if ( ! empty($data['error_content'])) : ?> <small class="clRed error2"><?=$data['error_content']?></small> <?php endif; ?>
 						</label>
 					</div>
@@ -132,7 +164,7 @@
 
 				<div class="article-content">
 					<section class="article">
-						<?=$data['CONTENT']?>
+						<?=htmlspecialchars_decode($data['CONTENT'])?>
 					</section>
 				</div>
 			</section>

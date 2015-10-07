@@ -162,14 +162,21 @@ class Admin extends Controller
 					),
 					'link'			=> array(
 						'name'		=> 'Article Link',
-						'required'	=> true
+						'required'	=> true,
+						'unique'   	=> ARTICLE_TABLE
 					)
 				));
+
+				if( empty(Input::get('type')) ){
+					$type = 1;
+				} else {
+					$type = 0;
+				}
+
 
 				if( $validate->passed() ) {
 					$template = Strings::get('catagory');
 					
-
 					try {
 						$article->create(array(
 							'TITLE'     	=> Input::get('title'),
@@ -179,7 +186,8 @@ class Admin extends Controller
 							'IMG'			=> Input::get('featuredimage'),
 							'DES'			=> Input::get('description'),
 							'LINK'			=> Input::get('link'),
-							'TEMPLATE'		=> $template[Input::get('catagory')]
+							'TYPE'			=> $type,
+							'TEMPLATE'		=> Input::get('template')
 						));
 
 						// Get the created article details from LINK to redirect the user to edit it.
@@ -212,11 +220,18 @@ class Admin extends Controller
 
 			$data['CATAGORY']	= Strings::get('catagory');
 			$data['SUBCATAGORY']	= Strings::get('subcatagory');
+			$data['TEMPLATES']	= Strings::get('templates');
 			$data['token'] = Token::generate();
 			$data['TITLE'] = "Create New Post";
 			$this->view('admin/post.new.html',$data);
 
 		} else {
+
+			/** 
+			 * Edit Post section
+			 * 
+			 * The edit and after creation events happen here
+			 */
 			$article = new Article( $post_id );
 
 			if( Input::exists() /*&& Token::check( Input::get( 'token' ) )*/ ) {
@@ -237,14 +252,35 @@ class Admin extends Controller
 					'featuredimage' => array(
 						'name'		=> 'Featured Image',
 						'required'	=> true
-					),
-					'link'			=> array(
-						'name'		=> 'Article Link',
-						'required'	=> true
 					)
 				));
 
-				if( $validate->passed() ) {
+				// If Article URL is changed check if it already exist
+				if( $validate->passed() && $article->data()->LINK  != Input::get('link') ) {
+					$validation = $validate->check($_POST, array(
+						'link'			=> array(
+							'name'		=> 'Article Link',
+							'required'	=> true,
+							'unique'   	=> ARTICLE_TABLE
+						)
+					));
+				}
+
+
+				if( empty(Input::get('type')) ){
+					$type = 0;
+				} else {
+					$type = 1;
+				}
+
+
+				if( Input::get('publish') == 1){
+					$publish = $article->data()->STATUS ? 0 : 1;
+				} else {
+					$publish = $article->data()->STATUS;
+				}
+
+				if( $validation ) {
 					
 					$template = Strings::get('catagory');
 
@@ -258,7 +294,9 @@ class Admin extends Controller
 							'IMG'			=> Input::get('featuredimage'),
 							'DES'			=> Input::get('description'),
 							'LINK'			=> Input::get('link'),
-							'TEMPLATE'		=> $template[Input::get('catagory')]
+							'TYPE'			=> $type,
+							'TEMPLATE'		=> Input::get('template'),
+							'STATUS'		=> $publish
 						), $post_id);
 
 						Redirect::to( ADMINPATH . 'post/' . $post_id);
@@ -280,9 +318,17 @@ class Admin extends Controller
 			}
 
 			if( $article->count() ) {
-				$data = objectToArray( $article->data() );
+				
+				if ( isset( $data ) )  {
+					$data  = array_merge ( $data,  objectToArray($article->data()) );
+				} else {
+					$data = objectToArray($article->data());
+				}
+
 				$data['CATAGORY']	= Strings::get('catagory');
 				$data['SUBCATAGORY']	= Strings::get('subcatagory');
+				$data['TEMPLATES']	= Strings::get('templates');
+				$data['CONTENT'] = htmlspecialchars_decode($data['CONTENT']);
 				$data['token'] = Token::generate();
 				$this->view('admin/post.html',$data);
 			}

@@ -56,6 +56,10 @@ $GLOBALS['strings'] = array(
 		'HTML'	=> 'HTML',
 		'PHP'	=> 'PHP',	
 		'CSS'	=> 'CSS'
+	),
+	'templates'	=> array(
+		0 => 'Full Page',
+		1 => 'Sidebar'
 	)
 );
 

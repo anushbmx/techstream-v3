@@ -28,7 +28,7 @@
 		<div class="row" data-equalizer="page-content">
 			<div class="column small-12 medium-8 large-8 border br padd-4-top push-4-bottom" data-equalizer-watch="page-content">
 				<section class="article push-4-bottom">
-					<?=$data['CONTENT']?>
+					<?=htmlspecialchars_decode($data['CONTENT'])?>
 				</section>
 				<div id="comments" class=" border bt push-4-top">
 					<div class="clearfix">

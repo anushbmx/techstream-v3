@@ -142,6 +142,7 @@ class Validate
 		// if all the condiction checks pass _passed class variable is set to true.
 		if ( empty($this->_errors) ) {
 			$this->_passed = true;
+			return true;
 		}
 	}
 

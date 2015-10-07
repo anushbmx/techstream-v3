@@ -75,6 +75,33 @@
 						</label>
 					</div>
 				</div>
+				
+				<div class="row">
+					<div class="large-6 small-12 columns">
+						<label>Type
+							<select name="template">
+							<?php if ( isset($data['TEMPLATE']) ) : ?>
+								
+								<option value="<?=$data['TEMPLATE']?>"><?=$data['TEMPLATES'][$data['TEMPLATE']]?></option>
+							<?php endif; ?>
+							<?php
+							foreach ($data['TEMPLATES'] as $key=>$value) {
+							?>
+								<option value="<?=$key?>"><?=removeHyphen($value)?></option>
+							<?php 
+							}
+							?>
+							</select>
+						</label>
+					</div>
+					<div class="large-6 small-12 columns">
+						<label for="type"> Article | Page</label>
+						<div class="switch round large">
+							<input id="type" type="checkbox" <?php if ( ! empty($data['TYPE']) && $data['TYPE'] ==1 ) : ?> checked="checked" <?php endif; ?> name="type">
+							<label for="type"> Page / Article</label>
+						</div>
+					</div>
+				</div>
 
 				<div class="row">
 					<div class="large-12 columns">
