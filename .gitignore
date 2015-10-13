@@ -2,3 +2,4 @@
 /vendor/**/.git
 /vendor
 composer.phar
+/public/images/img/

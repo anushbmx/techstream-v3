@@ -54,6 +54,21 @@ class Input
 	}
 
 	/**
+	 * File Data retrival
+	 *
+	 * Retrives file data submitted via GET or POST method from forms or via URL's.
+	 * If no data exist empty character will be returned.
+	 *
+	 * @param string $item name of data variable used in GET or POST method. eg : username.
+	 */
+	public static function getFiles ( $item ) {
+		if ( isset($_POST) ) {
+			return $_FILES[ $item ];
+		} 
+
+		return '';
+	}
+	/**
 	 * Submitted Data
 	 *
 	 * Retrives the data submitted via GET or POST method from forms or via URL's.

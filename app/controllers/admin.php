@@ -290,7 +290,7 @@ class Admin extends Controller
 							'SECURL'       	=> Input::get('catagory'),
 							'SUBSEC'		=> Input::get('subsec'),
 							'CONTENT'		=> Input::get('content'),
-							'CREATED_DATE'  => date("Y-m-d  H:i:s",time()),
+							'DATE'  		=> Input::get('date'),
 							'IMG'			=> Input::get('featuredimage'),
 							'DES'			=> Input::get('description'),
 							'LINK'			=> Input::get('link'),
@@ -333,5 +333,48 @@ class Admin extends Controller
 				$this->view('admin/post.html',$data);
 			}
 		}
+	}
+
+	public function upload($value='')
+	{
+		$this->model('User');
+		$this->model('Article');
+
+		$user = new User();
+		$article = new Article();
+
+		$this->loginRequired($user);
+
+		$validate = true; // validating form status variable
+
+		if( !empty($_FILES['uploadfile']) /*&& Token::check( Input::get( 'token' ) )*/ ) {
+			$tempExt = (explode('.',$_FILES['uploadfile']['name']));
+			$file_ext=strtolower(end($tempExt));
+			$extensions = array("png","jpg","jpeg");
+			if(in_array($file_ext,$extensions )=== false){
+				$data['error_uploadfile'] ="extension not allowed, please choose a png file.";
+				$validate = false;
+			}
+
+			if ( $validate ) {
+				$domainIcon = Input::getFiles('uploadfile');
+				$tempExt = (explode('.',$domainIcon['name']));
+				$file_ext=strtolower(end($tempExt));
+				$file_tmp = $domainIcon['tmp_name'];
+				$domainIcon = RAWMEDIAPATH . $domainIcon['name'];
+				move_uploaded_file($file_tmp, $domainIcon);
+				echo $domainIcon;die();
+			 // Filemanager::upload($file_tmp, $domainIcon);
+			}
+
+		
+		}
+
+		
+		
+
+
+		$data['token'] = Token::generate();
+		$this->view('admin/upload.html',$data);
 	}
 }

@@ -121,6 +121,20 @@
 				</div>
 
 				<div class="row">
+					<div class="large-6 small-12 columns">
+						<label>Date
+						<input type="text" name="date" placeholder="" <?php if ( ! empty($data['DATE'])) : ?> value="<?=$data['DATE']?>" <?php else : ?> value="<?=date("Y-m-d  H:i:s",time())?>" <?php endif; ?> />
+						<?php if ( ! empty($data['error_date'])) : ?> <small class="clRed error2"><?=$data['error_date']?></small> <?php endif; ?>
+						</label>
+					</div>
+					<div class="large-6 small-12 columns">
+						
+					</div>
+				</div>
+
+
+
+				<div class="row">
 					<div class="large-12 columns">
 						<label>Article
 						<textarea name="content" cols="77" rows="30"><?php if ( ! empty($data['CONTENT'])) : ?><?=htmlspecialchars_decode($data['CONTENT'])?><?php endif; ?></textarea>

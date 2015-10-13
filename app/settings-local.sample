@@ -45,7 +45,10 @@ define( 'RESOURCEPATH', '');
 define( 'MEDIAPATH', '' );
 
 /** Absolute Path of Application Resources */
-define( 'RESOURCEABSEPATH', ABSPATH . 'public/' );
+define( 'RESOURCEABSEPATH', ABSPATH . '' );
+
+/** Absolute Path of MEDIA Resources */
+define( 'RAWMEDIAPATH',  ABSPATH . '' );
 
 
 // ** Error Reporting Settings ** //
