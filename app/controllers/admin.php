@@ -363,7 +363,6 @@ class Admin extends Controller
 				$file_tmp = $domainIcon['tmp_name'];
 				$domainIcon = RAWMEDIAPATH . $domainIcon['name'];
 				move_uploaded_file($file_tmp, $domainIcon);
-				echo $domainIcon;die();
 			 // Filemanager::upload($file_tmp, $domainIcon);
 			}
 
