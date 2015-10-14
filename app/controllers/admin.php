@@ -363,15 +363,12 @@ class Admin extends Controller
 				$file_tmp = $domainIcon['tmp_name'];
 				$domainIcon = RAWMEDIAPATH . $domainIcon['name'];
 				move_uploaded_file($file_tmp, $domainIcon);
+				Session::flash( 'alert', 'success, File Uploaded, The following file has been uploaded successfully' );
 			 // Filemanager::upload($file_tmp, $domainIcon);
 			}
 
 		
 		}
-
-		
-		
-
 
 		$data['token'] = Token::generate();
 		$this->view('admin/upload.html',$data);

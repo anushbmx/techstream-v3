@@ -4,4 +4,5 @@
 <script>
     $(document).foundation();
   </script>
+<?php Alerts::activate() ?>
 </html>
