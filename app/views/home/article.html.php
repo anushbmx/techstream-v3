@@ -6,7 +6,7 @@
 				<img src="<?=MEDIAPATH . $data['IMG'] ?>" alt="<?=$data['TITLE']?>"/>
 				<h1 class="article-heading padd-1-top"><?=$data['TITLE']?></h1>
 				<ul class="inline-list post-meta border bb padd-4-bottom nospace">
-					<li><a href="<?=PUBLICPATH . $data['SECURL']?>"><?=$data['SEC']?></a></li>
+					<li><a href="<?=PUBLICPATH . $data['SECURL']?>"><?=removeHyphen($data['SECURL'])?></a></li>
 					<li class="divide"></li>
 					<li><?=date('M dS Y',strtotime($data['DATE']))?></li>
 					<li class="divide"></li>

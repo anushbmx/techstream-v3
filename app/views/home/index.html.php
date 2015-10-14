@@ -55,7 +55,7 @@
 								<a href="<?=PUBLICPATH.$data['article'][$i]['LINK']?>"><h3 class="post-title-3 push-2-bottom push-2-top"><?=$data['article'][$i]['TITLE']?></h3></a>
 								<p><?=elliStr($data['article'][$i]['DES'],200)?>... <a href="<?=PUBLICPATH.$data['article'][$i]['LINK']?>" class="p-anchor">Read More</a></p>
 								<ul class="inline-list post-meta">
-									<li><a href="<?=PUBLICPATH . $data['article'][$i]['SECURL']?>"><?=$data['article'][$i]['SEC']?></a></li>
+									<li><a href="<?=PUBLICPATH . $data['article'][$i]['SECURL']?>"><?=removeHyphen($data['article'][$i]['SECURL'])?></a></li>
 									<li class="divide"></li>
 									<li><?=date('M dS',strtotime($data['article'][$i]['DATE']))?></li>
 									<li class="divide"></li>
@@ -122,7 +122,7 @@
 				</a>
 				<a href="<?=PUBLICPATH.$data['article'][$i]['LINK']?>" class="padd-2-top" ><h3 class="post-title-2" data-equalizer-watch="third-post-title"><?=$data['article'][$i]['TITLE']?></h3></a>
 				<ul class="inline-list post-meta push-4-bottom">
-					<li><a href="<?=PUBLICPATH . $data['article'][$i]['SECURL']?>"><?=$data['article'][$i]['SEC']?></a></li>
+					<li><a href="<?=PUBLICPATH . $data['article'][$i]['SECURL']?>"><?=removeHyphen($data['article'][$i]['SEC'])?></a></li>
 					<li class="divide"></li>
 					<li><?=date('M dS',strtotime($data['article'][$i]['DATE']))?></li>
 					<li class="divide"></li>

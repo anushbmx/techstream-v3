@@ -49,7 +49,7 @@
 								<a href="<?=PUBLICPATH.$data['items'][$i]['LINK']?>"><h3 class="post-title-3 push-2-bottom push-2-top"><?=$data['items'][$i]['TITLE']?></h3></a>
 								<p><?=elliStr($data['items'][$i]['DES'],200)?></p>
 								<ul class="inline-list post-meta">
-									<li><a href="<?=PUBLICPATH . $data['items'][$i]['SECURL']?>"><?=$data['items'][$i]['SEC']?></a></li>
+									<li><a href="<?=PUBLICPATH . $data['items'][$i]['SECURL']?>"><?=removeHyphen($data['items'][$i]['SECURL'])?></a></li>
 									<li class="divide"></li>
 									<li><?=date('M dS',strtotime($data['items'][$i]['DATE']))?></li>
 									<li class="divide"></li>

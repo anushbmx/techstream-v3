@@ -12,6 +12,7 @@
 		<div class="hide-for-small-only medium-6 columns padd-1-bottom text-right padd-1-top">
 			<input type="submit" class="button  tiny  nospace" value="Save" />
 			<?php if ( $data['STATUS'] == 1) { ?>
+				<a class="button warning tiny" target="_blank" href="<?=PUBLICPATH . $data['LINK']?>"> View Article</a>
 				<button value="1" class="button tiny nospace alert" name="publish">Un Publish</button>
 			<?php } else { ?>
 				<button value="1" class="button tiny nospace success" name="publish">Publish</button>
