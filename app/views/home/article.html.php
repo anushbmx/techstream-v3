@@ -18,7 +18,7 @@
 
 	<div class="article-content">
 		<div class="row">
-			<div class="column small-8 medium-4 large-uncentered small-centered large-2">
+			<div class="column small-10 medium-4 large-uncentered small-centered large-2">
 				<div class="clearfix">
 					<div class="section-heading-container">
 						<h3 class="section-heading">Advert</h3>

@@ -370,8 +370,27 @@ class Admin extends Controller
 
 		
 		}
-
+		$data['TITLE']	= "Upload Media";
 		$data['token'] = Token::generate();
 		$this->view('admin/upload.html',$data);
+	}
+
+	public function settings($value='')
+	{
+
+		if ( Input::exists() ) {
+			$extra = array(
+				'ad_sidebar' 	=> Input::get('ad_sidebar'),
+				'ad_main' 	=> Input::get('ad_main'),		
+				'footer_links'  => Input::get('footer_links')
+		 	);
+		 	$config = '$lang = ' . var_export($config, true) . ';';
+			file_put_contents( APPPATH . 'settings-extra.php', '<?PHP ' . $config . ' ?>');
+			$data = $config;
+		}
+
+		$data['TITLE']	= "System Settings";
+		$data['token'] = Token::generate();
+		$this->view('admin/settings.html',$data);
 	}
 }
