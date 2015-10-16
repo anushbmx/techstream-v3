@@ -20,10 +20,11 @@
 		<div class="row push-2-top push-2-bottom">
 			<div class="column small-12 medium-10 small-centered">
 				<ul class="inline-list nospace friendLinks text-center">
-					<li><a href="">Link 1</a></li>
-					<li><a href="">Link 1</a></li>
-					<li><a href="">Link 1</a></li>
-					<li><a href="">Link 1</a></li>
+					<?php 
+						if ( isset($GLOBALS['extra']['footer_links']) ) {
+							echo $GLOBALS['extra']['footer_links'];
+						}
+					?>
 				</ul>
 			</div>
 		</div>
