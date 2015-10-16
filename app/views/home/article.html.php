@@ -24,7 +24,13 @@
 						<h3 class="section-heading">Advert</h3>
 					</div>
 				</div>
-				<div class="ads"></div>
+				<div class="ads">
+					<?php 
+						if ( isset($GLOBALS['extra']['ad_main']) ) {
+							echo $GLOBALS['extra']['ad_main'];
+						}
+					?>
+				</div>
 			</div>
 			<div class="column small-12 medium-9 large-8 large-uncentered small-centered push-4-top push-4-bottom">
 				<section class="article">

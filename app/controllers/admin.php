@@ -365,6 +365,7 @@ class Admin extends Controller
 				$domainIcon = RAWMEDIAPATH . $domainIcon['name'];
 				move_uploaded_file($file_tmp, $domainIcon);
 				Session::flash( 'alert', 'success, File Uploaded, The following file has been uploaded successfully' );
+				Redirect::to( ADMINPATH . 'upload' );
 			 // Filemanager::upload($file_tmp, $domainIcon);
 			}
 
@@ -380,14 +381,20 @@ class Admin extends Controller
 
 		if ( Input::exists() ) {
 			$extra = array(
-				'ad_sidebar' 	=> Input::get('ad_sidebar'),
-				'ad_main' 	=> Input::get('ad_main'),		
-				'footer_links'  => Input::get('footer_links')
+				'ad_sidebar' 	=> ( Input::get('ad_sidebar') ),
+				'ad_main' 		=> ( Input::get('ad_main') ),		
+				'footer_links'  => ( Input::get('footer_links') )
 		 	);
-		 	$config = '$lang = ' . var_export($config, true) . ';';
+		 	$config = '$GLOBALS[\'extra\'] = ' . var_export($extra, true) . ';';
 			file_put_contents( APPPATH . 'settings-extra.php', '<?PHP ' . $config . ' ?>');
-			$data = $config;
+			Session::flash( 'alert', 'success, File Uploaded, The following file has been uploaded successfully' );
+			Redirect::to( ADMINPATH . 'settings' );
 		}
+
+		if ( isset($GLOBALS["extra"]) ) {
+			$data = $GLOBALS["extra"];
+		}
+
 
 		$data['TITLE']	= "System Settings";
 		$data['token'] = Token::generate();

@@ -19,7 +19,13 @@
 						<h3 class="section-heading left">Advert</h3>
 					</div>
 				</div>
-				<div class="ads"></div>
+				<div class="ads">
+					<?php 
+						if ( isset($GLOBALS['extra']['ad_sidebar']) ) {
+							echo $GLOBALS['extra']['ad_sidebar'];
+						}
+					?>
+				</div>
 			</div>
 		</div>
 	</div>

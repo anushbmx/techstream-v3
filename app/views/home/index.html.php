@@ -76,6 +76,11 @@
 					</div>
 				</div>
 				<div class="ads push-3-top push-3-bottom">
+					<?php 
+						if ( isset($GLOBALS['extra']['ad_sidebar']) ) {
+							echo $GLOBALS['extra']['ad_sidebar'];
+						}
+					?>
 				</div>
 				<div class="border bt">
 					<div class="clearfix">
