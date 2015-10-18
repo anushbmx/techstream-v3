@@ -381,9 +381,10 @@ class Admin extends Controller
 
 		if ( Input::exists() ) {
 			$extra = array(
-				'ad_sidebar' 	=> ( Input::get('ad_sidebar') ),
-				'ad_main' 		=> ( Input::get('ad_main') ),		
-				'footer_links'  => ( Input::get('footer_links') )
+				'ad_sidebar' 	=> Input::get('ad_sidebar'),
+				'ad_main' 		=> Input::get('ad_main'),		
+				'footer_links'  => Input::get('footer_links'),
+				'styles'		=> Input::get('styles') 
 		 	);
 		 	$config = '$GLOBALS[\'extra\'] = ' . var_export($extra, true) . ';';
 			file_put_contents( APPPATH . 'settings-extra.php', '<?PHP ' . $config . ' ?>');

@@ -1,6 +1,6 @@
 	<section id="footer" class="padd-4-top padd-4-bottom">
 		<div class="row padd-4-bottom link-1 border bb">
-			<div class="column small-12 medium-6 large-6 ">
+			<div class="column small-12 medium-6 large-6">
 				<ul class="inline-list nospace">
 					<li><a href="<?=PUBLICPATH?>About">About</a></li>
 					<li><a href="<?=PUBLICPATH?>All">All Article</a></li>
@@ -41,5 +41,4 @@
 			</div>
 		</div>
 	</section>
-	
 </div> <!-- End of id="container" -->

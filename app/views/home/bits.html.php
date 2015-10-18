@@ -13,7 +13,7 @@
 				</ul>
 				<p class="push-2-top border bt padd-2-top"><?=$data['DES']?></p>
 			</div>
-			<div class="column small-6 medium-4 large-4 small-centered medium-uncentered">
+			<div class="column small-10 medium-4 large-4 small-centered medium-uncentered">
 				<div class="clearfix">
 					<div class="section-heading-container">
 						<h3 class="section-heading left">Advert</h3>

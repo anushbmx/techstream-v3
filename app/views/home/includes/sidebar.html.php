@@ -7,7 +7,7 @@ if(isset($data['sidebar'])) {
 
 <div class="row">
 	<div class="column small-12">
-		<div class="clearfix">
+		<!-- <div class="clearfix">
 			<div class="section-heading-container">
 				<h3 class="section-heading left">Search</h3>
 			</div>
@@ -25,7 +25,7 @@ if(isset($data['sidebar'])) {
 					</div>
 				</div>
 			</div>
-		</form>
+		</form> -->
 		<?php if($data['sidebar']['article']) { ?>
 
 			<div class="clearfix">

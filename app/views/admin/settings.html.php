@@ -30,6 +30,15 @@
 
 					<div class="row">
 						<div class="large-12 columns">
+							<label> Additional Styles (CSS)
+								<textarea name="styles" cols="77" rows="5"><?php if ( ! empty($data['styles'])) : ?><?=$data['styles']?><?php endif; ?></textarea>
+								<?php if ( ! empty($data['error_styles'])) : ?> <small class="clRed error2"><?=$data['error_styles']?></small> <?php endif; ?>
+							</label>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="large-12 columns">
 							<label> Footer Links (HTML)
 								<textarea name="footer_links" cols="77" rows="5"><?php if ( ! empty($data['footer_links'])) : ?><?=$data['footer_links']?><?php endif; ?></textarea>
 								<?php if ( ! empty($data['error_footer_links'])) : ?> <small class="clRed error2"><?=$data['error_footer_links']?></small> <?php endif; ?>
