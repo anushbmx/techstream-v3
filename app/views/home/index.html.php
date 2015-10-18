@@ -59,7 +59,7 @@
 									<li class="divide"></li>
 									<li><?=date('M dS',strtotime($data['article'][$i]['DATE']))?></li>
 									<li class="divide"></li>
-									<li><a href="<?=PUBLICPATH.$data['article'][$i]['LINK']?>#comments">Comments</a></li>
+									<li><a href="<?=PUBLICPATH.$data['article'][$i]['LINK']?>#disqus_thread">Comments</a></li>
 								</ul>
 							</div>
 						</div>
@@ -131,7 +131,7 @@
 					<li class="divide"></li>
 					<li><?=date('M dS',strtotime($data['article'][$i]['DATE']))?></li>
 					<li class="divide"></li>
-					<li><a href="<?=PUBLICPATH.$data['article'][$i]['LINK']?>#comments">Comments</a></li>
+					<li><a href="<?=PUBLICPATH.$data['article'][$i]['LINK']?>#disqus_thread">Comments</a></li>
 				</ul>
 				<p><?=elliStr($data['article'][$i]['DES'],150)?>... <a href="<?=PUBLICPATH.$data['article'][$i]['LINK']?>" class="p-anchor">Read More</a></p>
 			</div>

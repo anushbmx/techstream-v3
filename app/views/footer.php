@@ -14,4 +14,14 @@
 <?php
 	}
 ?>
+
+<?php 
+	if ( isset($GLOBALS['extra']['scripts']) ) {
+?>
+<script type="text/javascript">
+		<?=$GLOBALS['extra']['scripts']?>
+</script>
+<?php
+	}
+?>
 </html>

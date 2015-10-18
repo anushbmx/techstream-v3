@@ -32,19 +32,28 @@
 
 	<div class="article-content border bt">
 		<div class="row" data-equalizer="page-content">
-			<div class="column small-12 medium-8 large-8 border br padd-4-top push-4-bottom" data-equalizer-watch="page-content">
+			<div class="column small-12 medium-8 large-8 border br padd-4-top" >
 				<section class="article push-4-bottom">
 					<?=htmlspecialchars_decode($data['CONTENT'])?>
 				</section>
+				<?php 
+					if ($data['TYPE']  == 0) {
+				?>
 				<div id="comments" class=" border bt push-4-top">
 					<div class="clearfix">
 						<div class="section-heading-container">
 							<h3 class="section-heading left">Comments</h3>
 						</div>
 					</div>
+					<?php 
+						if ( isset($GLOBALS['extra']['comments']) ) {
+							echo $GLOBALS['extra']['comments'];
+						}
+					?>
 				</div>
+				<?php } ?>
 			</div>
-			<div class="column small-12 medium-4 large-4" data-equalizer-watch="page-content">
+			<div class="column small-12 medium-4 large-4" >
 				<?php include 'includes/sidebar.html.php'; ?>
 			</div>
 		</div>

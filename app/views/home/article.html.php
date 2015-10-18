@@ -3,7 +3,7 @@
 	<div class="article-head push-4-top ">
 		<div class="row">
 			<div class="column small-12 medium-9 large-8 small-centered">
-				<img src="<?=MEDIAPATH . $data['IMG'] ?>" alt="<?=$data['TITLE']?>"/>
+				<img class="featured-image" src="<?=MEDIAPATH . $data['IMG'] ?>" alt="<?=$data['TITLE']?>"/>
 				<h1 class="article-heading padd-1-top"><?=$data['TITLE']?></h1>
 				<ul class="inline-list post-meta border bb padd-4-bottom nospace">
 					<li><a href="<?=PUBLICPATH . $data['SECURL']?>"><?=removeHyphen($data['SECURL'])?></a></li>
@@ -44,9 +44,9 @@
 					</div>
 				</div>
 				<ul class="nostyle-list social-links-vertical">
-					<li><a href="">Facebook</a></li>
-					<li><a href="">Twitter</a></li>
-					<li><a href="">Google Plus</a></li>
+					<li><a target="_blank" href="http://www.facebook.com/sharer.php?u=<?=PUBLICPATH . $data['LINK']?>">Facebook</a></li>
+					<li><a target="_blank" href="http://twitter.com/intent/tweet?url=<?=PUBLICPATH . $data['LINK']?>">Twitter</a></li>
+					<li><a target="_blank" href="https://plus.google.com/share?url=/<?=PUBLICPATH . $data['LINK']?>">Google Plus</a></li>
 				</ul>
 			</div>
 		</div>
@@ -54,14 +54,19 @@
 
 	<div class="article-discussion border bt" data-equalizer="post-meta" >
 		<div class="row">
-			<div class="column small-12 medium-8 large-8 border br" data-equalizer-watch="post-meta">
+			<div class="column small-12 medium-8 large-8 border br" >
 				<div class="clearfix">
 					<div class="section-heading-container">
 						<h3 id="comments" class="section-heading left">Comments</h3>
 					</div>
 				</div>
+				<?php 
+					if ( isset($GLOBALS['extra']['comments']) ) {
+						echo $GLOBALS['extra']['comments'];
+					}
+				?>
 			</div>
-			<div class="column small-12 medium-4 large-4" data-equalizer-watch="post-meta">
+			<div class="column small-12 medium-4 large-4" >
 				<?php include 'includes/sidebar.html.php'; ?>
 			</div>
 		</div>

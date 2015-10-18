@@ -106,8 +106,7 @@ p{
 
 /* == Ads == */
 .ads{
-	background-color: rgba(0,0,0,0.2);
-	height: 180px;
+	min-height: 100px;
 	width: 100%;
 }
 
@@ -445,6 +444,9 @@ img {
 	line-height: 1;
 	letter-spacing: -2px;
 }
+	img.featured-image{
+		width: 100%;
+	}
 
 .pages-heading {
 	line-height: 1;

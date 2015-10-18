@@ -37,7 +37,7 @@
 				</ul>
 			</div>
 			<div class="column small-6 text-right">
-				&copy; <?php=date('Y')?> Tech Stream. All code <a href="http://opensource.org/licenses/MIT">MIT license</a>
+				&copy; <?=date('Y')?> Tech Stream. All code <a href="http://opensource.org/licenses/MIT">MIT license</a>
 			</div>
 		</div>
 	</section>

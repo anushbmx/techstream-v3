@@ -384,11 +384,14 @@ class Admin extends Controller
 				'ad_sidebar' 	=> Input::get('ad_sidebar'),
 				'ad_main' 		=> Input::get('ad_main'),		
 				'footer_links'  => Input::get('footer_links'),
-				'styles'		=> Input::get('styles') 
+				'styles'		=> Input::get('styles'),
+				'scripts'		=> Input::get('scripts'),
+				'comments'		=> Input::get('comments'),
 		 	);
 		 	$config = '$GLOBALS[\'extra\'] = ' . var_export($extra, true) . ';';
 			file_put_contents( APPPATH . 'settings-extra.php', '<?PHP ' . $config . ' ?>');
 			Session::flash( 'alert', 'success, File Uploaded, The following file has been uploaded successfully' );
+			sleep(2);
 			Redirect::to( ADMINPATH . 'settings' );
 		}
 

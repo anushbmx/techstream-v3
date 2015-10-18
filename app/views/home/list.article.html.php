@@ -59,7 +59,7 @@
 									<li class="divide"></li>
 									<li><?=date('M dS',strtotime($data['items'][$i]['DATE']))?></li>
 									<li class="divide"></li>
-									<li><a href="<?=PUBLICPATH.$data['items'][$i]['LINK']?>#comments">Comments</a></li>
+									<li><a href="<?=PUBLICPATH.$data['items'][$i]['LINK']?>#disqus_thread">Comments</a></li>
 								</ul>
 							</div>
 						</div>
