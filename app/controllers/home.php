@@ -99,7 +99,10 @@ class Home extends Controller
 						$this->view('home/list.article.html',$data);						
 					}
 				} else {
-					$data['TITLE'] = "No found";
+					$article = new Article('NotFound');
+					$data = objectToArray( $article->data() );
+					$data['CONTENT'] = str_replace('[IMAGE]', MEDIAPATH , $data['CONTENT']);
+					$data['sidebar']['article']	= objectToArray($article->articleList(0,'TYPE', 0,5));
 					$this->view('home/bits.html',$data);
 				}
 

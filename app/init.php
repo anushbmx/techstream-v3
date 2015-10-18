@@ -25,11 +25,9 @@ define( 'APPPATH', dirname( dirname(__FILE__) ) . '/app/' );
 require_once APPPATH . 'settings-local.php';
 
 /* Loading Extra Configuration file */
-if ( file_exists( APPPATH . 'settings-extra.php' ) ) {
+if ( file_exists( APPPATH . 'settings-extra.php' )  ) {
 	require_once APPPATH . 'settings-extra.php';
 }
-
-require_once APPPATH . 'settings-extra.php';
 
 /* Applcation configurations */
 require_once APPPATH . 'settings.php';
