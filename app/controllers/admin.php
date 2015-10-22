@@ -168,9 +168,9 @@ class Admin extends Controller
 				));
 
 				if( empty(Input::get('type')) ){
-					$type = 1;
-				} else {
 					$type = 0;
+				} else {
+					$type = 1;
 				}
 
 
