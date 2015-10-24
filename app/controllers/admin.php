@@ -329,7 +329,7 @@ class Admin extends Controller
 				$data['SUBCATAGORY']	= Strings::get('subcatagory');
 				$data['TEMPLATES']	= Strings::get('templates');
 				$data['CONTENT'] = str_replace('[IMAGE]', MEDIAPATH , $data['CONTENT']);
-				$data['CONTENT'] = (htmlspecialchars($data['CONTENT']));
+				$data['CONTENT'] = ($data['CONTENT']);
 				$data['token'] = Token::generate();
 				$this->view('admin/post.html',$data);
 			}

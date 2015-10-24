@@ -138,7 +138,7 @@
 				<div class="row">
 					<div class="large-12 columns">
 						<label>Article
-						<textarea name="content" cols="77" rows="30"><?php if ( ! empty($data['CONTENT'])) : ?><?=htmlspecialchars_decode($data['CONTENT'])?><?php endif; ?></textarea>
+						<textarea name="content" cols="77" rows="30"><?php if ( ! empty($data['CONTENT'])) : ?><?=(($data['CONTENT']))?><?php endif; ?></textarea>
 						<?php if ( ! empty($data['error_content'])) : ?> <small class="clRed error2"><?=$data['error_content']?></small> <?php endif; ?>
 						</label>
 					</div>

@@ -55,6 +55,10 @@ pre code{
 	margin-bottom: 1.25rem;
 }
 
+code {
+	overflow: auto;
+}
+
 body{
 	font-family: "Merriweather Sans";
 	font-weight: 100;
@@ -373,27 +377,24 @@ img {
 		font-weight: 100;
 	}
 
-	.article p a, a.p-anchor{
+	.article p a, .article li a, a.p-anchor{
 		color: inherit !important;
 		display: inline !important;
 		font-style: italic;
 		text-decoration: underline;
 	}
 
-	.article p a:hover, a.p-anchor:hover {
+	.article p a:hover, .article li a:hover, a.p-anchor:hover {
 		color : rgb(0, 120, 160) !important;
 	}
 
-	.article p a:visited{
-		text-decoration: none;	
-	}
-
 	.article ul , .article ol{
+		color: rgba(0,0,0,0.8);
 		font-family: "Merriweather";
 		font-size: 1.1rem;
-		line-height: 2rem;
-		color: rgba(0,0,0,0.8);
 		font-weight: 100;
+		margin-left: 0;
+		line-height: 2rem;
 	}
 
 	.article li {
