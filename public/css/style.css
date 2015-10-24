@@ -68,9 +68,10 @@ body{
 
 h1, h2, h3, h4, h5, h6 {
 	color: rgba(0,0,0,0.8);
+	font-family: "Merriweather Sans";
 	font-weight: bold;
 	letter-spacing: -1px;
-	line-height: 1.2;
+	line-height: 1;
 	text-transform: capitalize; 
 }
 
@@ -443,7 +444,7 @@ img {
 .article-heading {
 	font-size: 3.2rem;
 	line-height: 1;
-	letter-spacing: -2px;
+	letter-spacing: -4px;
 }
 	img.featured-image{
 		width: 100%;
@@ -451,7 +452,7 @@ img {
 
 .pages-heading {
 	line-height: 1;
-	letter-spacing: -2px;
+	letter-spacing: -3px;
 }
 
 .pages-short-description {
@@ -520,7 +521,6 @@ img {
 }
 	.post-title-3{
 		font-size: 1.6rem;
-		line-height: 1;
 	}
 
 	.post-list {
