@@ -328,6 +328,7 @@ class Admin extends Controller
 				$data['CATAGORY']	= Strings::get('catagory');
 				$data['SUBCATAGORY']	= Strings::get('subcatagory');
 				$data['TEMPLATES']	= Strings::get('templates');
+				$data['CONTENT_RAW'] =$data['CONTENT'];
 				$data['CONTENT'] = str_replace('[IMAGE]', MEDIAPATH , $data['CONTENT']);
 				$data['CONTENT'] = ($data['CONTENT']);
 				$data['token'] = Token::generate();
