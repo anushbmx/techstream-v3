@@ -129,7 +129,11 @@
 						</label>
 					</div>
 					<div class="large-6 small-12 columns">
-						
+						<label for="featured"> Featured </label>
+						<div class="switch round large">
+							<input id="featured" type="checkbox" <?php if ( ! empty($data['FEATURED']) && $data['FEATURED'] ==1 ) : ?> checked="checked" <?php endif; ?> name="featured">
+							<label for="featured"> Page / Article</label>
+						</div>
 					</div>
 				</div>
 

@@ -15,8 +15,13 @@ class Home extends Controller
 			
 			$article = new Article();
 
-			$data['bits']  = objectToArray($article->articleList('Bits','SEC',0,10));
+			$data['bits']  = objectToArray($article->articleList('Bits','SECURL',0,10));
 			$data['article']  = objectToArray($article->articleList(0,'TYPE',0,10));
+			if ($featured = $article->articleList(1,'FEATURED',0,10)) {
+				$data['featured'] = objectToArray($featured);
+			} else {
+				$data['featured'] = $data['article'];
+			}
 			$data['username'] = "Anush";
 			$data['TITLE'] = "Tech Strem";
 
@@ -91,9 +96,9 @@ class Home extends Controller
 					}
 					$data['sidebar']['article']	= objectToArray($article->articleList(0,'TYPE', 0,5));
 					$data['items'] = objectToArray($article->articleList($targetParameter,$targetEntry, $data['start'],$data['limit'] ) );					
-					$data['TITLE'] = $data['items'][1]['SEC'];
+					$data['TITLE'] = removeHyphen($data['items'][0]['SECURL']);
 					$data['TOTAL'] = $total;
-					if($data['items'][1]['TYPE'] == 1 ) {
+					if($data['items'][0]['TYPE'] == 1 ) {
 						$this->view('home/list.bits.html',$data);
 					} else {
 						$this->view('home/list.article.html',$data);						

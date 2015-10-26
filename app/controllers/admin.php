@@ -273,6 +273,13 @@ class Admin extends Controller
 					$type = 1;
 				}
 
+				if( empty(Input::get('featured')) ){
+					$featured = 0;
+				} else {
+					$featured = 1;
+				}
+
+
 
 				if( Input::get('publish') == 1){
 					$publish = $article->data()->STATUS ? 0 : 1;
@@ -296,6 +303,7 @@ class Admin extends Controller
 							'LINK'			=> Input::get('link'),
 							'TYPE'			=> $type,
 							'TEMPLATE'		=> Input::get('template'),
+							'FEATURED'		=> $featured,
 							'STATUS'		=> $publish
 						), $post_id);
 
