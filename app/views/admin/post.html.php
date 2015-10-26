@@ -124,7 +124,7 @@
 				<div class="row">
 					<div class="large-6 small-12 columns">
 						<label>Date
-						<input type="text" name="date" placeholder="" <?php if ( ! empty($data['DATE'])) : ?> value="<?=$data['DATE']?>" <?php else : ?> value="<?=date("Y-m-d  H:i:s",time())?>" <?php endif; ?> />
+						<input type="text" name="date" placeholder="" <?php if ( $data['DATE'] != '0000-00-00 00:00:00') : ?> value="<?=$data['DATE']?>" <?php else : ?> value="<?=date("Y-m-d  H:i:s",time())?>" <?php endif; ?> />
 						<?php if ( ! empty($data['error_date'])) : ?> <small class="clRed error2"><?=$data['error_date']?></small> <?php endif; ?>
 						</label>
 					</div>
