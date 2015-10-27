@@ -96,7 +96,11 @@ class Home extends Controller
 					}
 					$data['sidebar']['article']	= objectToArray($article->articleList(0,'TYPE', 0,5));
 					$data['items'] = objectToArray($article->articleList($targetParameter,$targetEntry, $data['start'],$data['limit'] ) );					
-					$data['TITLE'] = removeHyphen($data['items'][0]['SECURL']);
+					if ( $targetParameter ) {
+						$data['TITLE'] = removeHyphen($data['items'][0]['SECURL']);
+					} else {
+						$data['TITLE'] = "All Articles";
+					}
 					$data['TOTAL'] = $total;
 					if($data['items'][0]['TYPE'] == 1 ) {
 						$this->view('home/list.bits.html',$data);
