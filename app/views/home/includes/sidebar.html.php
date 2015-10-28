@@ -31,7 +31,7 @@ if(isset($data['sidebar'])) {
 			<div class="clearfix">
 				<div class="section-heading-container">
 					<h3 class="section-heading left">Last 5 Articles</h3>
-					<a href="<?PUBLICPATH?>all"><h3 class="section-heading right">All Articles &gt;</h3>
+					<a href="<?=PUBLICPATH?>all"><h3 class="section-heading right">All Articles &gt;</h3>
 				</div>
 			</div>
 			<ol class="nostyle-list side-list border bb padd-2-bottom">	
