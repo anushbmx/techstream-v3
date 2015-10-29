@@ -2,7 +2,9 @@
 </body>
 <script src="http://code.jquery.com/jquery.min.js"></script>
 <script src="<?=RESOURCEPATH?>js/foundation.min.js"></script>
+<script src="<?=RESOURCEPATH?>js/highlight.pack.js"></script>
 <script>
+	hljs.initHighlightingOnLoad();
     $(document).foundation();
 </script>
 <?php 
