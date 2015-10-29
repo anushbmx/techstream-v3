@@ -52,7 +52,7 @@ $GLOBALS['strings'] = array(
 		'Bits'  		  => 1	
 	),
 	'subcatagory'	=> array(
-		'' 		=> 'Nill',
+		'' 		=> 'General',
 		'HTML'	=> 'HTML',
 		'PHP'	=> 'PHP',	
 		'CSS'	=> 'CSS'

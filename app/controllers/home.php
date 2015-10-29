@@ -24,7 +24,6 @@ class Home extends Controller
 			}
 			$data['username'] = "Anush";
 			$data['TITLE'] = "Tech Strem";
-
 			$this->view('home/index.html',$data);
 
 		} else {
@@ -43,6 +42,8 @@ class Home extends Controller
 			if( $article->count() ) {
 				$data = objectToArray( $article->data() );
 				$data['CONTENT'] = str_replace('[IMAGE]', MEDIAPATH , $data['CONTENT']);
+				$data['DESCRIPTION'] = $data['DES'];
+				$data['CANONICAL']	= PUBLICPATH . $data['LINK'];
 				$data['sidebar']['article']	= objectToArray($article->articleList(0,'TYPE', 0,5));
 				switch ( $article->data()->TEMPLATE ) {
 					case 0:
@@ -102,6 +103,7 @@ class Home extends Controller
 						$data['TITLE'] = "All Articles";
 					}
 					$data['TOTAL'] = $total;
+					$data['DESCRIPTION'] = "Find out the list of articles and posts in : " . $data['TITLE'];
 					if($data['items'][0]['TYPE'] == 1 ) {
 						$this->view('home/list.bits.html',$data);
 					} else {
@@ -112,6 +114,7 @@ class Home extends Controller
 					$data = objectToArray( $article->data() );
 					$data['CONTENT'] = str_replace('[IMAGE]', MEDIAPATH , $data['CONTENT']);
 					$data['sidebar']['article']	= objectToArray($article->articleList(0,'TYPE', 0,5));
+					$data['DESCRIPTION'] = $data['DES'];
 					$this->view('home/bits.html',$data);
 				}
 

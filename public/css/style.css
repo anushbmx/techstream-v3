@@ -50,7 +50,10 @@ a:visited {
 }
 /* Pre code */
 
-pre code{
+pre code, .hljs{
+	background: transparent;
+	border-right: none;
+	border-left: none;
 	display:block;
 	margin-bottom: 1.25rem;
 }
