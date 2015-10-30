@@ -44,7 +44,7 @@ if(isset($data['sidebar'])) {
 					<a href="<?=PUBLICPATH.$data['sidebar']['article'][$i]['LINK']?>">
 						<h4 class="side-list-title"><?=$data['sidebar']['article'][$i]['TITLE']?></h4>
 					</a>
-					<small><?=$data['sidebar']['article'][$i]['SEC']?></small>
+					<small>&nbsp;<?=$data['sidebar']['article'][$i]['SEC']?></small>
 				</li>
 				<?php
 				}

@@ -16,7 +16,7 @@
 	<link rel="stylesheet" type="text/css" href="<?=RESOURCEPATH?>css/font.css">
 	<link rel="stylesheet" type="text/css" href="<?=RESOURCEPATH?>css/style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" user-scalable="no">
-	<link rel="publisher" href="https://plus.google.com/109470966265063246951">
+	<link rel="publisher" href="<?=GOOGLEPLUS?>">
 	<?php
 		if(isset($data['DESCRIPTION'])){
 	?>
