@@ -51,11 +51,11 @@ a:visited {
 /* Pre code */
 
 pre code, .hljs{
-	background: transparent;
-	border-right: none;
-	border-left: none;
+	background: rgba(0, 0, 0, 0.05);
+	border: none;
 	display:block;
 	margin-bottom: 1.25rem;
+	white-space: pre-wrap;
 }
 
 code {

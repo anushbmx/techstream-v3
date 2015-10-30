@@ -24,6 +24,7 @@ class Home extends Controller
 			}
 			$data['username'] = "Anush";
 			$data['TITLE'] = "Tech Strem";
+			$data['DESCRIPTION'] = "Tech stream is a Web Design and Development blog dedicated to provide inspiring and innovative contents.";
 			$this->view('home/index.html',$data);
 
 		} else {
