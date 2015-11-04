@@ -3,22 +3,22 @@
 	<div class="featured-post border bb padd-2-top padd-2-bottom">
 		<div class="row push-4-top push-4-bottom center-element-container	">
 			<div class="column small-12 medium-9 medium-centered large-uncentered large-7">
-				<a href="<?=PUBLICPATH.$data['featured'][0]['LINK']?>">
+				<a href="<?=PUBLICPATH.$data['article'][0]['LINK']?>">
 					<div class="responsive-image">
-						<img src="<?=MEDIAPATH.$data['featured'][0]['IMG']?>" alt="<?=$data['featured'][0]['TITLE']?>" />
+						<img src="<?=MEDIAPATH.$data['article'][0]['IMG']?>" alt="<?=$data['article'][0]['TITLE']?>" />
 					</div>
 				</a>
 			</div>
 			<div class="column small-12 small-centered featured-post-description-container show-for-small-only">
 				<div class="featured-post-description">
-					<a href="<?=PUBLICPATH.$data['featured'][0]['LINK']?>"><h2 class="featured-post-heading"><?=elliStr($data['featured'][0]['TITLE'],40)?></h2></a>
-					<p class="push-4-top"><?=elliStr($data['featured'][0]['DES'],200)?> <a href="<?=PUBLICPATH.$data['featured'][0]['LINK']?>" class="p-anchor">Read More</a></p>
+					<a href="<?=PUBLICPATH.$data['article'][0]['LINK']?>"><h2 class="featured-post-heading"><?=elliStr($data['article'][0]['TITLE'],40)?></h2></a>
+					<p class="push-4-top"><?=elliStr($data['article'][0]['DES'],200)?> <a href="<?=PUBLICPATH.$data['article'][0]['LINK']?>" class="p-anchor">Read More</a></p>
 				</div>
 			</div>
 			<div class=" column small-12 medium-9 large-5 medium-centered large-uncentered push-4-top padd-4-top end text-center hide-for-small">
 				<div class="featured-post-description">
-					<a href="<?=PUBLICPATH.$data['featured'][0]['LINK']?>"><h2 class="featured-post-heading"><?=elliStr($data['featured'][0]['TITLE'],60)?></h2></a>
-					<p class="push-4-top"><?=elliStr($data['featured'][0]['DES'],300)?> <a href="<?=PUBLICPATH.$data['featured'][0]['LINK']?>" class="p-anchor"> Read More</a></p>
+					<a href="<?=PUBLICPATH.$data['article'][0]['LINK']?>"><h2 class="featured-post-heading"><?=elliStr($data['article'][0]['TITLE'],60)?></h2></a>
+					<p class="push-4-top"><?=elliStr($data['article'][0]['DES'],300)?> <a href="<?=PUBLICPATH.$data['article'][0]['LINK']?>" class="p-anchor"> Read More</a></p>
 				</div>
 			</div>
 		</div>	

@@ -16,12 +16,10 @@ class Home extends Controller
 			$article = new Article();
 
 			$data['bits']  = objectToArray($article->articleList('Bits','SECURL',0,10));
-			$data['article']  = objectToArray($article->articleList(0,'TYPE',0,10));
-			if ($featured = $article->articleList(1,'FEATURED',0,10)) {
-				$data['featured'] = objectToArray($featured);
-			} else {
-				$data['featured'] = $data['article'];
-			}
+			$data['article']  = objectToArray($article->articleList(1,'FEATURED',0,10));
+			if ( sizeof($data['article']) < 7 ) {
+				$data['article'] = array_merge(objectToArray(objectToArray($article->articleList(0,'TYPE',0,10))));
+			} 
 			$data['username'] = "Anush";
 			$data['TITLE'] = "Tech Strem";
 			$data['DESCRIPTION'] = "Tech stream is a Web Design and Development blog dedicated to provide inspiring and innovative contents.";

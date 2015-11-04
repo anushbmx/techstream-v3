@@ -96,7 +96,9 @@ class Admin extends Controller
 
 		if( isset($parameter[0]) && $parameter[0] == 'draft' ) {
 			$article->articleList(0,'STATUS',null,null,0);
-		} else {
+		} elseif( isset($parameter[0]) && $parameter[0] == 'pages' ) {
+			$article->articleList(1,'TYPE');
+		}else {
 			$article->articleList(0,'TYPE');
 		}
 
@@ -117,8 +119,11 @@ class Admin extends Controller
 			}
 		}
 		if( isset($parameter[0]) && $parameter[0] == 'draft' ) {
-			$data['items'] = objectToArray($article->articleList(0,'TYPE', $data['start'],$data['limit'] , 0) );
+			$data['items'] = objectToArray($article->articleList(0,'STATUS', $data['start'],$data['limit'] , 0) );
 			$data['TITLE'] = 'Draft';
+		} else if( isset($parameter[0]) && $parameter[0] == 'pages' ) {
+			$data['items'] = objectToArray($article->articleList(1,'TYPE', $data['start'],$data['limit'] ) );
+			$data['TITLE'] = 'Pages';
 		} else {
 			$data['items'] = objectToArray($article->articleList(0,'TYPE', $data['start'],$data['limit'] ) );
 			$data['TITLE'] = 'All Articles';

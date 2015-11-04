@@ -11,6 +11,7 @@
 				<li><a class="button transparent" href="<?=ADMINPATH?>post">New Post</a></li>
 				<li><a class="button transparent" href="<?=ADMINPATH?>viewpost/draft">Edit Draft</a></li>
 				<li><a class="button success" href="<?=ADMINPATH?>viewpost">Published Post</a></li>
+				<li><a class="button success" href="<?=ADMINPATH?>pages">Pages</a></li>
 				<li><a class="button transparent" href="<?=ADMINPATH?>upload">Upload</a></li>
 				<li><a class="button transparent" href="<?=ADMINPATH?>settings">Settings</a></li>
 				<li><a class="button warning" target="_blank" href="<?=PUBLICPATH?>">Visit site</a></li>
