@@ -154,7 +154,7 @@ class Admin extends Controller
 					'title'		=> array(
 						'name'	   => 'Post title',
 						'required' => true,
-						'min' 	   => 5
+						'min' 	   => 1
 					),
 					'description'   => array(
 						'name'		=> 'description',
