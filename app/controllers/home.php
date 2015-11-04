@@ -17,7 +17,7 @@ class Home extends Controller
 
 			$data['bits']  = objectToArray($article->articleList('Bits','SECURL',0,10));
 			$data['article']  = objectToArray($article->articleList(1,'FEATURED',0,10));
-			if ( sizeof($data['article']) < 7 ) {
+			if ( sizeof($data['article']) < 8 ) {
 				$data['article'] = array_merge(objectToArray(objectToArray($article->articleList(0,'TYPE',0,10))));
 			} 
 			$data['username'] = "Anush";
