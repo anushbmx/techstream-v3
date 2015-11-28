@@ -21,7 +21,7 @@ class Home extends Controller
 				$data['article'] = array_merge(objectToArray(objectToArray($article->articleList(0,'TYPE',0,10))));
 			} 
 			$data['username'] = "Anush";
-			$data['TITLE'] = "Tech Strem";
+			$data['TITLE'] = "Tech Stream";
 			$data['DESCRIPTION'] = "Tech stream is a Web Design and Development blog dedicated to provide inspiring and innovative contents.";
 			$this->view('home/index.html',$data);
 
@@ -43,6 +43,7 @@ class Home extends Controller
 				$data['CONTENT'] = str_replace('[IMAGE]', MEDIAPATH , $data['CONTENT']);
 				$data['DESCRIPTION'] = $data['DES'];
 				$data['CANONICAL']	= PUBLICPATH . $data['LINK'];
+				$data['TITLE '] = $data['TITLE'] . "| Tech Stream";
 				$data['sidebar']['article']	= objectToArray($article->articleList(0,'TYPE', 0,5));
 				switch ( $article->data()->TEMPLATE ) {
 					case 0:
@@ -97,9 +98,9 @@ class Home extends Controller
 					$data['sidebar']['article']	= objectToArray($article->articleList(0,'TYPE', 0,5));
 					$data['items'] = objectToArray($article->articleList($targetParameter,$targetEntry, $data['start'],$data['limit'] ) );					
 					if ( $targetParameter ) {
-						$data['TITLE'] = removeHyphen($data['items'][0]['SECURL']);
+						$data['TITLE'] = removeHyphen($data['items'][0]['SECURL']) . "| Tech Stream";
 					} else {
-						$data['TITLE'] = "All Articles";
+						$data['TITLE'] = "All Articles" . "| Tech Stream" ;
 					}
 					$data['TOTAL'] = $total;
 					$data['DESCRIPTION'] = "Find out the list of articles and posts in : " . $data['TITLE'];
