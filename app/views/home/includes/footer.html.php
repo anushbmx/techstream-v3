@@ -32,7 +32,7 @@
 			<div class="column small-6">
 				<ul class="inline-list nospace">
 					<li><a href="<?=PUBLICPATH?>Privacy">Privacy</a></li>
-					<li><a href="<?=PUBLICPATH?>Licence">Licence</a></li>
+					<li><a href="<?=PUBLICPATH?>License">License</a></li>
 					<li><a href="<?=PUBLICPATH?>Credits">Credits</a></li>
 				</ul>
 			</div>
