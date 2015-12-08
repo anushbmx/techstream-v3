@@ -100,7 +100,7 @@ class Home extends Controller
 					if ( $targetParameter ) {
 						$data['TITLE'] = removeHyphen($data['items'][0]['SECURL']) . "| Tech Stream";
 					} else {
-						$data['TITLE'] = "All Articles" . "| Tech Stream" ;
+						$data['TITLE'] = "All Articles" . " | Tech Stream" ;
 					}
 					$data['TOTAL'] = $total;
 					$data['DESCRIPTION'] = "Find out the list of articles and posts in : " . $data['TITLE'];
