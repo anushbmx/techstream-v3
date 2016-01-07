@@ -7,25 +7,6 @@ if(isset($data['sidebar'])) {
 
 <div class="row">
 	<div class="column small-12">
-		<!-- <div class="clearfix">
-			<div class="section-heading-container">
-				<h3 class="section-heading left">Search</h3>
-			</div>
-		</div>
-		<form class="padd-2-bottom border bb">
-			<div class="row">
-				<div class="large-12 columns">
-					<div class="row collapse">
-						<div class="small-10 columns">
-							<input type="text" placeholder="Search on Tech Stream">
-						</div>
-						<div class="small-2 columns">
-							<input class="button tiny" value="Search" type="submit">
-						</div>
-					</div>
-				</div>
-			</div>
-		</form> -->
 		<?php if($data['sidebar']['article']) { ?>
 
 			<div class="clearfix">
