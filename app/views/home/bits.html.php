@@ -4,6 +4,9 @@
 		<div class="row padd-2-bottom">
 			<div class="column small-12 medium-8 large-8 padd-4-top small-centered medium-uncentered">
 				<h1 class="pages-heading "><?=$data['TITLE']?></h1>
+				<?php 
+					if ($data['TYPE'] != 1) :
+				?>
 				<ul class="inline-list post-meta ">
 					<li><a href="<?=PUBLICPATH . $data['SECURL']?>"><?=removeHyphen($data['SECURL'])?></a></li>
 					<li class="divide"></li>
@@ -11,6 +14,9 @@
 					<li class="divide"></li>
 					<li>Comments</li>
 				</ul>
+				<?php
+					endif;
+				?>
 				<p class="push-2-top border bt padd-2-top"><?=$data['DES']?></p>
 			</div>
 			<div class="column small-10 medium-4 large-4 small-centered medium-uncentered">
