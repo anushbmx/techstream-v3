@@ -367,6 +367,11 @@ img {
 		width: 90px;
 	}
 
+	.search-box input{
+		border-radius: 1000px;
+		padding: 0 1rem;
+	}
+
 /* == Content == */
 
 /* Article & Pages */
