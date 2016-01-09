@@ -55,7 +55,8 @@ $GLOBALS['strings'] = array(
 		'' 		=> 'General',
 		'HTML'	=> 'HTML',
 		'PHP'	=> 'PHP',	
-		'CSS'	=> 'CSS'
+		'CSS'	=> 'CSS',
+		'PYTHON'=> 'PYTHON'
 	),
 	'templates'	=> array(
 		0 => 'Full Page',
