@@ -9,7 +9,7 @@
 					</div>
 				</a>
 			</div>
-			<div class="column small-12 small-centered featured-post-description-container show-for-small-only">
+			<div class="column small-12 small-centered featured-post-description-container push-2-top show-for-small-only">
 				<div class="featured-post-description">
 					<a href="<?=PUBLICPATH.$data['article'][0]['LINK']?>"><h2 class="featured-post-heading"><?=elliStr($data['article'][0]['TITLE'],40)?></h2></a>
 					<p class="push-4-top"><?=elliStr($data['article'][0]['DES'],200)?> <a href="<?=PUBLICPATH.$data['article'][0]['LINK']?>" class="p-anchor">Read More</a></p>
