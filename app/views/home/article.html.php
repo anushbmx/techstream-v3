@@ -10,7 +10,7 @@
 					<li class="divide"></li>
 					<li><?=date('M dS Y',strtotime($data['DATE']))?></li>
 					<li class="divide"></li>
-					<li>Comments</li>
+					<li><li><a href="<?=PUBLICPATH.$data['LINK']?>#disqus_thread">Comments</a></li>
 				</ul>
 			</div>
 		</div>
