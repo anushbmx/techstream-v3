@@ -49,6 +49,7 @@ $GLOBALS['strings'] = array(
 		''				  => 0,
 		'Web-Design' 	  => 0,
 		'Web-Development' => 0,
+		'Reviews'		  => 0,
 		'Bits'  		  => 1	
 	),
 	'subcatagory'	=> array(
