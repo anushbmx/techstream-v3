@@ -47,6 +47,7 @@ $GLOBALS['config'] = array(
 $GLOBALS['strings'] = array(
 	'catagory'	=> array(
 		''				  => 0,
+		'General'		  => 0,
 		'Web-Design' 	  => 0,
 		'Web-Development' => 0,
 		'Reviews'		  => 0,
