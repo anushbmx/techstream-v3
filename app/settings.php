@@ -60,6 +60,7 @@ $GLOBALS['strings'] = array(
 		'CSS'	=> 'CSS',
 		'PYTHON'=> 'PYTHON',
 		'JAVASCRIPT'=> 'JAVASCRIPT'
+		'DOCKER'=> 'Docker',
 	),
 	'templates'	=> array(
 		0 => 'Full Page',
