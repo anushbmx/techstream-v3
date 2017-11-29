@@ -59,7 +59,7 @@ $GLOBALS['strings'] = array(
 		'PHP'	=> 'PHP',	
 		'CSS'	=> 'CSS',
 		'PYTHON'=> 'PYTHON',
-		'JAVASCRIPT'=> 'JAVASCRIPT'
+		'JAVASCRIPT'=> 'JAVASCRIPT',
 		'DOCKER'=> 'Docker',
 	),
 	'templates'	=> array(
