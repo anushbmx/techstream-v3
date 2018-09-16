@@ -1,6 +1,6 @@
 <?php Alerts::activate() ?>	
 </body>
-<script src="http://code.jquery.com/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery.min.js"></script>
 <script src="<?=RESOURCEPATH?>js/foundation.min.js"></script>
 <script src="<?=RESOURCEPATH?>js/highlight.pack.js"></script>
 <script>

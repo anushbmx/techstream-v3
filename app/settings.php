@@ -76,7 +76,7 @@ define('FACEBOOKURL', 'https://facebook.com/' . FACEBOOKUSERNAME);
 define('TWITTER', 'https://twitter.com/' . TWITTERUSERNAME);
 
 /* Google Plus */
-define('GOOGLEPLUS', 'http://plus.google.com/' . GOOGLEPLUSUSERNAME);
+define('GOOGLEPLUS', 'https://plus.google.com/' . GOOGLEPLUSUSERNAME);
 
 
 /** Table Name Definitions */
