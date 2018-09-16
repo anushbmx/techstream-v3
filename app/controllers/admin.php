@@ -192,7 +192,7 @@ class Admin extends Controller
 							'DES'			=> Input::get('description'),
 							'LINK'			=> Input::get('link'),
 							'TYPE'			=> $type,
-							'TEMPLATE'		=> Input::get('template')
+							'TEMPLATE'		=> Input::get('template') ?  Input::get('template') : 0
 						));
 
 						// Get the created article details from LINK to redirect the user to edit it.
@@ -302,12 +302,12 @@ class Admin extends Controller
 							'SECURL'       	=> Input::get('catagory'),
 							'SUBSEC'		=> Input::get('subsec'),
 							'CONTENT'		=> Input::get('content'),
-							'DATE'  		=> Input::get('date'),
+							'DATE'			=> $published ? Input::get('date'): date("Y-m-d  H:i:s",time()),
 							'IMG'			=> Input::get('featuredimage'),
 							'DES'			=> Input::get('description'),
 							'LINK'			=> Input::get('link'),
 							'TYPE'			=> $type,
-							'TEMPLATE'		=> Input::get('template'),
+							'TEMPLATE'		=> Input::get('template') ?  Input::get('template') : 0,
 							'FEATURED'		=> $featured,
 							'STATUS'		=> $publish
 						), $post_id);
