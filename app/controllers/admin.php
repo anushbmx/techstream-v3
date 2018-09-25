@@ -142,6 +142,8 @@ class Admin extends Controller
 		$user = new User();
 		$article = new Article();
 
+		$data = array();
+
 		$this->loginRequired($user);
 
 		// If new post is to be created
