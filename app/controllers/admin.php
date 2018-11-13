@@ -304,7 +304,7 @@ class Admin extends Controller
 							'SECURL'       	=> Input::get('catagory'),
 							'SUBSEC'		=> Input::get('subsec'),
 							'CONTENT'		=> Input::get('content'),
-							'DATE'			=> $published ? Input::get('date'): date("Y-m-d  H:i:s",time()),
+							'DATE'			=> Input::get('date'),
 							'IMG'			=> Input::get('featuredimage'),
 							'DES'			=> Input::get('description'),
 							'LINK'			=> Input::get('link'),
