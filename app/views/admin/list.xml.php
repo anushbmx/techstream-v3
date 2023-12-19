@@ -17,6 +17,7 @@
 <!--    contained in this file into your site. -->
 
 	<!-- generator="WordPress/6.1.1" created="2023-02-02 07:47" -->
+	<textarea name="content" cols="77" rows="30">
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -47,7 +48,7 @@
 					<pubDate>Mon, 22 Jun 2020 07:52:45 +0000</pubDate>
 					<dc:creator><![CDATA[anush]]></dc:creator>
 					<description><![CDATA[<?=$data['items'][$i]['DES']?>]]></description>
-					<content:encoded><![CDATA[<?=htmlspecialchars_decode($data['items'][$i]['CONTENT'])?>]]></content:encoded>
+					<content:encoded><![CDATA[<?=($data['items'][$i]['CONTENT'])?>]]></content:encoded>
 					<wp:post_id>131</wp:post_id>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:ping_status><![CDATA[open]]></wp:ping_status>
@@ -121,4 +122,5 @@
 			</item>
 	</channel>
 </rss>
+</textarea>
 	
