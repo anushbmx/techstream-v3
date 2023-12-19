@@ -48,7 +48,7 @@
 					<pubDate>Mon, 22 Jun 2020 07:52:45 +0000</pubDate>
 					<dc:creator><![CDATA[anush]]></dc:creator>
 					<description><![CDATA[<?=$data['items'][$i]['DES']?>]]></description>
-					<content:encoded><![CDATA[<?=($data['items'][$i]['CONTENT'])?>]]></content:encoded>
+					<content:encoded><![CDATA[<?=htmlspecialchars_decode($data['items'][$i]['CONTENT'])?>]]></content:encoded>
 					<wp:post_id>131</wp:post_id>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:ping_status><![CDATA[open]]></wp:ping_status>
