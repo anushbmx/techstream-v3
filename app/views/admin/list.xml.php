@@ -51,22 +51,10 @@
 				<content:encoded>
 					<![CDATA[<?=htmlspecialchars_decode($data['items'][$i]['CONTENT'])?>:]]>
 				</content:encoded>
-				<excerpt:encoded>
-					<![CDATA[]]>
-				</excerpt:encoded>
-				<wp:post_id>6668</wp:post_id>
+				<wp:post_id><?=$data['items'][$i]['ID']?></wp:post_id>
 				<wp:post_date>
 					<![CDATA[<?php if ( $data['items'][$i]['DATE'] != '0000-00-00 00:00:00') : ?> value="<?=$data['items'][$i]['DATE']?>" <?php else : ?> value="<?=date("Y-m-d  H:i:s",time())?>" <?php endif; ?>]]>
 				</wp:post_date>
-				<wp:post_date_gmt>
-					<![CDATA[<?php if ( $data['items'][$i]['DATE'] != '0000-00-00 00:00:00') : ?> value="<?=$data['items'][$i]['DATE']?>" <?php else : ?> value="<?=date("Y-m-d  H:i:s",time())?>" <?php endif; ?>]]>
-				</wp:post_date_gmt>
-				<wp:post_modified>
-					<![CDATA[<?php if ( $data['items'][$i]['DATE'] != '0000-00-00 00:00:00') : ?> value="<?=$data['items'][$i]['DATE']?>" <?php else : ?> value="<?=date("Y-m-d  H:i:s",time())?>" <?php endif; ?>]]>
-				</wp:post_modified>
-				<wp:post_modified_gmt>
-					<![CDATA[<?php if ( $data['items'][$i]['DATE'] != '0000-00-00 00:00:00') : ?> value="<?=$data['items'][$i]['DATE']?>" <?php else : ?> value="<?=date("Y-m-d  H:i:s",time())?>" <?php endif; ?>]]>
-				</wp:post_modified_gmt>
 				<wp:comment_status>
 					<![CDATA[closed]]>
 				</wp:comment_status>
@@ -79,79 +67,10 @@
 				<wp:status>
 					<![CDATA[publish]]>
 				</wp:status>
-				<wp:post_parent>0</wp:post_parent>
-				<wp:menu_order>0</wp:menu_order>
-				<wp:post_password>
-					<![CDATA[]]>
-				</wp:post_password>
 				<wp:is_sticky>0</wp:is_sticky>
 				<category domain="category" nicename="<?=($data['items'][$i]['SECURL'])?>">
 					<![CDATA[<?=removeHyphen($data['items'][$i]['SECURL'])?>]]>
 				</category>
-				<wp:postmeta>
-					<wp:meta_key>
-						<![CDATA[_edit_last]]>
-					</wp:meta_key>
-					<wp:meta_value>
-						<![CDATA[1]]>
-					</wp:meta_value>
-				</wp:postmeta>
-				<wp:postmeta>
-					<wp:meta_key>
-						<![CDATA[_yoast_wpseo_content_score]]>
-					</wp:meta_key>
-					<wp:meta_value>
-						<![CDATA[60]]>
-					</wp:meta_value>
-				</wp:postmeta>
-				<wp:postmeta>
-					<wp:meta_key>
-						<![CDATA[_yoast_wpseo_primary_category]]>
-					</wp:meta_key>
-					<wp:meta_value>
-						<![CDATA[3]]>
-					</wp:meta_value>
-				</wp:postmeta>
-				<wp:postmeta>
-					<wp:meta_key>
-						<![CDATA[_yoast_wpseo_focuskw]]>
-					</wp:meta_key>
-					<wp:meta_value>
-						<![CDATA[physics textbook]]>
-					</wp:meta_value>
-				</wp:postmeta>
-				<wp:postmeta>
-					<wp:meta_key>
-						<![CDATA[_yoast_wpseo_title]]>
-					</wp:meta_key>
-					<wp:meta_value>
-						<![CDATA[%%title%%]]>
-					</wp:meta_value>
-				</wp:postmeta>
-				<wp:postmeta>
-					<wp:meta_key>
-						<![CDATA[_yoast_wpseo_metadesc]]>
-					</wp:meta_key>
-					<wp:meta_value>
-						<![CDATA[<?=$data['items'][$i]['DES']?>]]>
-					</wp:meta_value>
-				</wp:postmeta>
-				<wp:postmeta>
-					<wp:meta_key>
-						<![CDATA[_yoast_wpseo_linkdex]]>
-					</wp:meta_key>
-					<wp:meta_value>
-						<![CDATA[51]]>
-					</wp:meta_value>
-				</wp:postmeta>
-				<wp:postmeta>
-					<wp:meta_key>
-						<![CDATA[classic-editor-remember]]>
-					</wp:meta_key>
-					<wp:meta_value>
-						<![CDATA[classic-editor]]>
-					</wp:meta_value>
-				</wp:postmeta>
 			</item>
 		<?php
 			}

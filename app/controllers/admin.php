@@ -90,7 +90,7 @@ class Admin extends Controller
 
 		$data['start'] = 0;
 		$data['page']  = 1;
-		$data['limit'] = 50;			// Number of articles on a page
+		$data['limit'] = 2;			// Number of articles on a page
 		$data['sectionUrl'] = ADMINPATH . 'viewpostxml';
 
 
