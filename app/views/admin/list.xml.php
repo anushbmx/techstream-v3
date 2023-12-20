@@ -80,9 +80,6 @@
 				</wp:status>
 				<wp:post_parent>0</wp:post_parent>
 				<wp:menu_order>0</wp:menu_order>
-				<wp:post_type>
-					<![CDATA[post]]>
-				</wp:post_type>
 				<wp:post_password>
 					<![CDATA[]]>
 				</wp:post_password>
