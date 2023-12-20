@@ -42,7 +42,7 @@
 			<item>
 				<title><![CDATA[<?=$data['items'][$i]['TITLE']?>]]></title>
 				<link><?=PUBLICPATH . $data['LINK']?></link>
-				<pubDate><?=$data['DATE']?>" <?php else : ?> value="<?=date("Y-m-d  H:i:s",time())?> +0000</pubDate>
+				<pubDate><?php if ( $data['DATE'] != '0000-00-00 00:00:00') : ?> value="<?=$data['DATE']?>" <?php else : ?> value="<?=date("Y-m-d  H:i:s",time())?>" <?php endif; ?> +0000</pubDate>
 				<dc:creator>
 					<![CDATA[admin]]>
 				</dc:creator>
@@ -55,16 +55,16 @@
 				</excerpt:encoded>
 				<wp:post_id>6668</wp:post_id>
 				<wp:post_date>
-					<![CDATA[<?=$data['DATE']?>" <?php else : ?> value="<?=date("Y-m-d  H:i:s",time())?>]]>
+					<![CDATA[<?php if ( $data['DATE'] != '0000-00-00 00:00:00') : ?> value="<?=$data['DATE']?>" <?php else : ?> value="<?=date("Y-m-d  H:i:s",time())?>" <?php endif; ?>]]>
 				</wp:post_date>
 				<wp:post_date_gmt>
-					<![CDATA[<?=$data['DATE']?>" <?php else : ?> value="<?=date("Y-m-d  H:i:s",time())?>]]>
+					<![CDATA[<?php if ( $data['DATE'] != '0000-00-00 00:00:00') : ?> value="<?=$data['DATE']?>" <?php else : ?> value="<?=date("Y-m-d  H:i:s",time())?>" <?php endif; ?>]]>
 				</wp:post_date_gmt>
 				<wp:post_modified>
-					<![CDATA[<?=$data['DATE']?>" <?php else : ?> value="<?=date("Y-m-d  H:i:s",time())?>]]>
+					<![CDATA[<?php if ( $data['DATE'] != '0000-00-00 00:00:00') : ?> value="<?=$data['DATE']?>" <?php else : ?> value="<?=date("Y-m-d  H:i:s",time())?>" <?php endif; ?>]]>
 				</wp:post_modified>
 				<wp:post_modified_gmt>
-					<![CDATA[<?=$data['DATE']?>" <?php else : ?> value="<?=date("Y-m-d  H:i:s",time())?>]]>
+					<![CDATA[<?php if ( $data['DATE'] != '0000-00-00 00:00:00') : ?> value="<?=$data['DATE']?>" <?php else : ?> value="<?=date("Y-m-d  H:i:s",time())?>" <?php endif; ?>]]>
 				</wp:post_modified_gmt>
 				<wp:comment_status>
 					<![CDATA[closed]]>
