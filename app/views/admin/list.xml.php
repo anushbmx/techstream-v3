@@ -42,7 +42,7 @@
 			<item>
 				<title><![CDATA[<?=$data['items'][$i]['TITLE']?>]]></title>
 				<link><?=PUBLICPATH . $data['items'][$i]['LINK']?></link>
-				<pubDate><?php if ( $data['items'][$i]['DATE'] != '0000-00-00 00:00:00') : ?> value="<?=$data['items'][$i]['DATE']?>" <?php else : ?> value="<?=date("Y-m-d  H:i:s",time())?>" <?php endif; ?> +0000</pubDate>
+				<pubDate><?php if ( $data['items'][$i]['DATE'] != '0000-00-00 00:00:00') : ?><?=$data['items'][$i]['DATE']?><?php else : ?> value="<?=date("Y-m-d  H:i:s",time())?><?php endif; ?> +0000</pubDate>
 				<dc:creator>
 					<![CDATA[admin]]>
 				</dc:creator>
