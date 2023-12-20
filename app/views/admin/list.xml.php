@@ -46,7 +46,8 @@
 				<dc:creator>
 					<![CDATA[admin]]>
 				</dc:creator>
-				<description></description>
+				<description><?=$data['items'][$i]['DES']?></description>
+				<wp:post_type><![CDATA[post]]></wp:post_type>
 				<content:encoded>
 					<![CDATA[<?=htmlspecialchars_decode($data['items'][$i]['CONTENT'])?>:]]>
 				</content:encoded>
