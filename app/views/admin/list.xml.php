@@ -1,4 +1,5 @@
-ID, Title, Category, Sub Sec, Link, Date, Description, Content
+<textarea name="content" cols="77" rows="30">
+	ID, Title, Category, Sub Sec, Link, Date, Description, Content
 <?php 
 	for ( $i = 0; $i<sizeof($data['items']); $i++ ) {
 ?>
@@ -6,3 +7,4 @@ ID, Title, Category, Sub Sec, Link, Date, Description, Content
 <?php
 	}
 ?>
+</textarea>
