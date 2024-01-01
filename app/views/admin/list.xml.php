@@ -11,7 +11,7 @@
 	<link><?=PUBLICPATH . $data['items'][$i]['LINK']?></item>
 	<date><?=$data['items'][$i]['DATE']?></date>
 	<description><?=trim($data['items'][$i]['DES'])?></description>
-	<content><?=htmlspecialchars_decode($data['CONTENT'])?></content>
+	<content><?=htmlspecialchars_decode($data['items'][$i]['CONTENT'])?></content>
 </item>
 <?php
 }
