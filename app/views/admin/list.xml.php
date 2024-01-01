@@ -1,11 +1,20 @@
 <textarea name="content" cols="77" rows="30">
-ID, Title, Category, Sub Sec, Link, Date, Description, Content
+<channel>
 <?php 
 	for ( $i = 0; $i<sizeof($data['items']); $i++ ) {
 ?>
-<?=$data['items'][$i]['SL_NO']?>, <?=$data['items'][$i]['TITLE']?>, <?=$data['items'][$i]['SEC']?>, <?=$data['items'][$i]['SUBSEC']?>, <?=PUBLICPATH . $data['items'][$i]['LINK']?>, <?=$data['items'][$i]['DATE']?>, <?=trim($data['items'][$i]['DES'])?>, ""
-
+<item>
+	<id><?=$data['items'][$i]['SL_NO']?></id>
+	<title><?=$data['items'][$i]['TITLE']?></title>
+	<section><?=$data['items'][$i]['SEC']?></section>
+	<subsection><?=$data['items'][$i]['SUBSEC']?></subsection>
+	<link><?=PUBLICPATH . $data['items'][$i]['LINK']?></item>
+	<date><?=$data['items'][$i]['DATE']?></date>
+	<description><?=trim($data['items'][$i]['DES'])?></description>
+	<content><?=htmlspecialchars_decode($data['CONTENT'])?></content>
+</item>
 <?php
 }
 ?>
+</channel>
 </textarea>
