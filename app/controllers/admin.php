@@ -90,6 +90,68 @@ class Admin extends Controller
 
 		$data['start'] = 0;
 		$data['page']  = 1;
+		$data['limit'] = 2;			// Number of articles on a page
+		$data['sectionUrl'] = ADMINPATH . 'viewpostxml';
+
+
+		if( isset($parameter[0]) && $parameter[0] == 'draft' ) {
+			$article->articleList(0,'STATUS',null,null,0);
+		} elseif( isset($parameter[0]) && $parameter[0] == 'pages' ) {
+			$article->articleList(1,'TYPE');
+		}else {
+			$article->articleList(0,'TYPE');
+		}
+
+
+		$total = $article->count();
+		$data['totalArticle'] 	= $total;
+		if ( ! isset($page) || $page < 1 ) {
+			$page = 1;
+		}
+
+		if( is_numeric($page) ) {
+			$data['page']  = $page;
+			$data['start'] = $data['limit']  * ($page-1) ;
+			if( $data['start'] >= $total ) {
+				// Redirect to 404
+				echo "no found";
+				die();
+			}
+		}
+		if( isset($parameter[0]) && $parameter[0] == 'draft' ) {
+			$data['items'] = objectToArray($article->articleList(0,'STATUS', $data['start'],$data['limit'] , 0) );
+			$data['TITLE'] = 'Draft';
+		} else if( isset($parameter[0]) && $parameter[0] == 'pages' ) {
+			$data['items'] = objectToArray($article->articleList(1,'TYPE', $data['start'],$data['limit'] ) );
+			$data['TITLE'] = 'Pages';
+		} else {
+			$data['items'] = objectToArray($article->articleList(0,'TYPE', $data['start'],$data['limit'] ) );
+			$data['TITLE'] = 'All Articles';
+		}
+		
+		$data['TOTAL'] = $total;
+		$this->view('admin/list.xml',$data);
+	}	
+
+	public function viewpostxmlall ($parameter) {
+		$parameter = explode('/', $parameter);
+
+		if ( isset($parameter[0]) && is_numeric($parameter[0]) ) {
+			$page = $parameter[0];
+		} elseif ( isset($parameter[1]) && is_numeric($parameter[1]) ) {
+			$page = $parameter[1];
+		} 
+		
+		$this->model('User');
+		$this->model('Article');
+
+		$user = new User();
+		$article = new Article();
+
+		$this->loginRequired($user);
+
+		$data['start'] = 0;
+		$data['page']  = 1;
 		$data['limit'] = 400;			// Number of articles on a page
 		$data['sectionUrl'] = ADMINPATH . 'viewpostxml';
 
